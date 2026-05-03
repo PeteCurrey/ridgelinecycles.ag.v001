@@ -1,9 +1,8 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
-import { Plus, Heart, ShoppingBag } from "lucide-react";
+import { Plus, Heart } from "lucide-react";
 import { Product } from "@/lib/products";
 import { useCart } from "@/context/CartContext";
 import { cn } from "@/lib/utils";
@@ -17,90 +16,83 @@ export default function ProductCard({ product }: ProductCardProps) {
   const totalStock = Object.values(product.stock).reduce((a, b) => a + b, 0);
 
   return (
-    <div className="group flex flex-col bg-white overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-500">
+    <div className="group flex flex-col bg-brand-bg relative overflow-hidden transition-all duration-500">
       {/* Image Container */}
-      <div className="relative aspect-[4/5] overflow-hidden bg-[#f0f0f0]">
+      <div className="relative aspect-[4/5] overflow-hidden bg-brand-gray/30 border border-white/5 group-hover:border-white/10 transition-colors">
         <Link href={`/shop/${product.id}`} className="block w-full h-full">
-          {/* Placeholder/Actual Image */}
-          <div className="w-full h-full flex items-center justify-center bg-brand-bg relative transition-transform duration-700 group-hover:scale-110">
-             <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center opacity-40 group-hover:opacity-20 transition-opacity">
-                <span className="text-4xl font-display font-black text-brand-dark/20 uppercase tracking-tighter leading-none mb-2">
+          {/* Main Image Overlay - Dark style */}
+          <div className="w-full h-full flex items-center justify-center bg-transparent relative transition-transform duration-700 group-hover:scale-105">
+             <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center opacity-40 group-hover:opacity-10 transition-opacity">
+                <span className="text-4xl font-display font-black text-white/10 uppercase tracking-tighter leading-none mb-2">
                   {product.brand}
                 </span>
-                <span className="text-xl font-serif text-brand-dark/40 italic">
+                <span className="text-xl font-display text-white/30 italic">
                   {product.name}
                 </span>
              </div>
-             {/* If real image exists, use it. For now, we use a nice styled placeholder */}
-             <div className="absolute inset-0 bg-gradient-to-tr from-brand-accent/5 to-transparent pointer-events-none" />
+             {/* Gradient for depth */}
+             <div className="absolute inset-0 bg-gradient-to-t from-brand-bg/80 via-transparent to-brand-bg/20 pointer-events-none" />
           </div>
         </Link>
 
         {/* Badges */}
-        <div className="absolute top-4 left-4 flex flex-col gap-2">
+        <div className="absolute top-4 left-4 flex flex-col gap-2 z-20">
           {product.salePrice && (
-            <span className="bg-brand-accent text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest">
+            <span className="bg-brand-accent text-white text-[8px] font-bold px-2 py-1 uppercase tracking-widest border border-brand-accent">
               Sale
             </span>
           )}
           {totalStock <= 2 && totalStock > 0 && (
-            <span className="bg-amber-500 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest">
-              Last {totalStock} left
+            <span className="bg-white text-brand-dark text-[8px] font-bold px-2 py-1 uppercase tracking-widest">
+              Last {totalStock}
             </span>
           )}
         </div>
 
-        {/* Action Buttons (Overlay) */}
-        <div className="absolute bottom-4 right-4 flex flex-col gap-2 translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-          <button className="w-10 h-10 bg-white text-brand-dark flex items-center justify-center rounded-full hover:bg-brand-accent hover:text-white transition-colors shadow-md">
-            <Heart size={18} />
-          </button>
+        {/* Wishlist Button */}
+        <button className="absolute top-4 right-4 z-20 w-8 h-8 flex items-center justify-center rounded-full bg-white/5 backdrop-blur-md text-white/50 hover:text-brand-accent hover:bg-white/10 transition-all opacity-0 group-hover:opacity-100 -translate-y-2 group-hover:translate-y-0">
+          <Heart size={14} />
+        </button>
+
+        {/* Quick Add Overlay */}
+        <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out z-20">
           <button 
             onClick={() => addToCart(product)}
-            className="w-10 h-10 bg-brand-dark text-white flex items-center justify-center rounded-full hover:bg-brand-accent transition-colors shadow-md"
+            className="w-full bg-brand-accent text-white py-3 text-[9px] font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-brand-dark transition-colors flex items-center justify-center gap-2"
           >
-            <ShoppingBag size={18} />
+            Quick Add <Plus size={12} />
           </button>
         </div>
       </div>
 
       {/* Content */}
-      <div className="p-6 flex flex-col flex-grow">
-        <div className="flex justify-between items-start mb-2">
-          <span className="text-[10px] font-bold uppercase tracking-widest text-brand-accent">
+      <div className="pt-5 pb-2 flex flex-col flex-grow">
+        <div className="flex justify-between items-start mb-1">
+          <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-white/40">
             {product.brand}
           </span>
           <div className="flex gap-1">
             {product.colors.slice(0, 3).map((color, i) => (
-              <span key={i} className="w-2.5 h-2.5 rounded-full border border-gray-200" title={color} />
+              <span key={i} className="w-1.5 h-1.5 rounded-full border border-white/20" title={color} />
             ))}
           </div>
         </div>
         
-        <Link href={`/shop/${product.id}`} className="block mb-4">
-          <h3 className="text-lg font-display font-bold text-brand-dark group-hover:text-brand-accent transition-colors">
+        <Link href={`/shop/${product.id}`} className="block mb-2">
+          <h3 className="text-sm font-display font-bold text-white group-hover:text-brand-accent transition-colors uppercase tracking-wide">
             {product.name}
           </h3>
         </Link>
 
-        <div className="mt-auto flex justify-between items-center">
-          <div className="flex gap-3 items-center">
-            {product.salePrice ? (
-              <>
-                <span className="text-lg font-bold text-brand-accent">£{product.salePrice}</span>
-                <span className="text-sm text-gray-400 line-through">£{product.price}</span>
-              </>
-            ) : (
-              <span className="text-lg font-bold text-brand-dark">£{product.price}</span>
-            )}
-          </div>
-          
-          <button 
-            onClick={() => addToCart(product)}
-            className="text-[10px] font-bold uppercase tracking-widest text-brand-dark border-b-2 border-brand-accent pb-0.5 hover:text-brand-accent transition-colors"
-          >
-            Quick Add +
-          </button>
+        <div className="mt-auto flex items-center gap-3">
+          {product.salePrice ? (
+            <>
+              <span className="text-sm font-sans font-bold text-brand-accent">£{product.salePrice.toLocaleString()}</span>
+              <span className="text-[10px] font-sans text-white/30 line-through">£{product.price.toLocaleString()}</span>
+            </>
+          ) : (
+            <span className="text-sm font-sans font-bold text-white/90">£{product.price.toLocaleString()}</span>
+          )}
         </div>
       </div>
     </div>

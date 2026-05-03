@@ -9,12 +9,14 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          primary: "#FFFFFF",
-          dark: "#1A1A1A",
-          accent: "#D64B2A",
+          primary: "var(--brand-text)",
+          dark: "var(--brand-dark)",
+          accent: "var(--brand-accent)",
           secondary: "#2D5016",
-          bg: "#F5F2EE",
-          text: "#2C2C2C",
+          bg: "var(--brand-bg)",
+          text: "var(--brand-text)",
+          gray: "var(--brand-gray)",
+          muted: "var(--brand-muted)",
         },
       },
       fontFamily: {

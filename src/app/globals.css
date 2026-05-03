@@ -3,10 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --brand-bg: #F5F2EE;
-  --brand-text: #2C2C2C;
-  --brand-accent: #D64B2A;
-  --brand-dark: #1A1A1A;
+  --brand-bg: #050505;
+  --brand-text: #FFFFFF;
+  --brand-accent: #E24A22;
+  --brand-dark: #000000;
+  --brand-gray: #1A1A1A;
+  --brand-muted: #888888;
   --background: 0 0% 100%;
   --foreground: 222.2 84% 4.9%;
   --card: 0 0% 100%;
