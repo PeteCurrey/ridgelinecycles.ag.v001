@@ -66,12 +66,12 @@ export default function ProductCard({ product }: ProductCardProps) {
       </div>
 
       {/* Content */}
-      <div className="pt-5 pb-2 flex flex-col flex-grow">
-        <div className="flex justify-between items-start mb-1">
+      <div className="pt-5 pb-2 flex flex-col items-center text-center flex-grow">
+        <div className="flex flex-col items-center gap-2 mb-2">
           <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-white/40">
             {product.brand}
           </span>
-          <div className="flex gap-1">
+          <div className="flex gap-1 justify-center">
             {product.colors.slice(0, 3).map((color, i) => (
               <span key={i} className="w-1.5 h-1.5 rounded-full border border-white/20" title={color} />
             ))}
@@ -84,7 +84,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           </h3>
         </Link>
 
-        <div className="mt-auto flex items-center gap-3">
+        <div className="mt-auto flex items-center justify-center gap-3">
           {product.salePrice ? (
             <>
               <span className="text-sm font-sans font-bold text-brand-accent">£{product.salePrice.toLocaleString()}</span>

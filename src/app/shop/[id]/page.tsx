@@ -67,7 +67,7 @@ export default function ProductDetailPage() {
 
       <div className="container-custom pt-8 md:pt-12 pb-24">
         {/* Breadcrumbs */}
-        <nav className="flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.3em] text-white/40 mb-8 md:mb-16">
+        <nav className="flex items-center justify-center gap-2 text-[9px] font-bold uppercase tracking-[0.3em] text-white/40 mb-8 md:mb-16">
           <Link href="/" className="hover:text-brand-accent transition-colors">Home</Link>
           <ChevronRight size={10} />
           <Link href="/shop" className="hover:text-brand-accent transition-colors">Shop</Link>
@@ -317,11 +317,9 @@ export default function ProductDetailPage() {
       {/* Related Products */}
       <section className="py-24 border-t border-white/5 bg-[#0a0a0a]">
         <div className="container-custom">
-          <div className="flex justify-between items-end mb-12">
-            <div>
-              <span className="text-brand-accent font-bold uppercase tracking-[0.3em] text-[10px] mb-2 block">Series Collection</span>
-              <h2 className="text-3xl md:text-5xl font-display font-black uppercase tracking-tighter text-white">More like this</h2>
-            </div>
+          <div className="flex flex-col items-center text-center mb-12">
+            <span className="text-brand-accent font-bold uppercase tracking-[0.3em] text-[10px] mb-2 block">Series Collection</span>
+            <h2 className="text-3xl md:text-5xl font-display font-black uppercase tracking-tighter text-white">More like this</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {relatedProducts.map((p) => (

@@ -16,10 +16,10 @@ const navLinks = [
 ];
 
 const categories = [
-  { name: "Road", image: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&q=80", href: "/shop?category=Road" },
-  { name: "Mountain", image: "https://images.unsplash.com/photo-1565543730165-27a3d3c8736a?auto=format&fit=crop&q=80", href: "/shop?category=Mountain" },
-  { name: "Gravel", image: "https://images.unsplash.com/photo-1511994298241-608e28f14fde?auto=format&fit=crop&q=80", href: "/shop?category=Gravel" },
-  { name: "E-Bike", image: "https://images.unsplash.com/photo-1576435728678-68ce0f6eb293?auto=format&fit=crop&q=80", href: "/shop?category=E-Bike" },
+  { name: "Trail", image: "https://images.unsplash.com/photo-1544191696-102dbb1eaca5?auto=format&fit=crop&q=80", href: "/shop?category=Trail" },
+  { name: "Enduro", image: "https://images.unsplash.com/photo-1565543730165-27a3d3c8736a?auto=format&fit=crop&q=80", href: "/shop?category=Enduro" },
+  { name: "Downhill", image: "https://images.unsplash.com/photo-1571333148656-787622839257?auto=format&fit=crop&q=80", href: "/shop?category=Downhill" },
+  { name: "E-MTB", image: "https://images.unsplash.com/photo-1576435728678-68ce0f6eb293?auto=format&fit=crop&q=80", href: "/shop?category=E-MTB" },
 ];
 
 export default function Navbar() {
@@ -60,12 +60,12 @@ export default function Navbar() {
           </button>
 
           {/* Logo */}
-          <Link href="/" className="flex flex-col items-start group">
+          <Link href="/" className="flex flex-col items-center group">
             <span className="text-xl md:text-3xl font-display font-black tracking-tighter text-white uppercase">
               RIDGELINE<span className="text-brand-accent">.</span>
             </span>
             <span className="text-[9px] uppercase tracking-[0.3em] font-sans text-brand-muted group-hover:text-white transition-colors">
-              Peak Performance
+              Mountain Performance
             </span>
           </Link>
 
@@ -138,7 +138,7 @@ export default function Navbar() {
               onMouseLeave={() => setActiveMegaMenu(null)}
             >
               <div className="container-custom py-12">
-                <div className="flex items-end justify-between mb-8">
+                <div className="flex flex-col items-center justify-center mb-8 gap-4">
                   <h3 className="text-3xl font-display font-black text-white uppercase tracking-tighter">Collections</h3>
                   <Link href="/shop" className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-accent hover:text-white transition-colors flex items-center gap-1">
                     View All Bikes <ChevronRight size={12} />

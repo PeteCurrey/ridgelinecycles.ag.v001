@@ -8,7 +8,7 @@ import { products } from "@/lib/products";
 import ProductCard from "@/components/shop/ProductCard";
 import { cn } from "@/lib/utils";
 
-const categories = ["All", "Road", "Mountain", "Gravel", "E-Bike", "Kids"];
+const categories = ["All", "Trail", "Enduro", "Downhill", "E-MTB", "Youth MTB"];
 const brands = ["All", "Trek", "Specialized", "Cannondale", "Giant", "Whyte", "Orbea"];
 
 function ShopContent() {
@@ -33,7 +33,7 @@ function ShopContent() {
       <div className="container-custom">
         
         {/* Header & Filter Toggle */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12 border-b border-white/10 pb-8">
+        <div className="flex flex-col items-center text-center gap-8 mb-12 border-b border-white/10 pb-8">
           <div>
             <span className="text-brand-accent font-bold uppercase tracking-[0.3em] text-[10px] mb-4 block">Our Collection</span>
             <h1 className="text-5xl md:text-7xl font-display font-black uppercase tracking-tighter text-white">
@@ -43,7 +43,7 @@ function ShopContent() {
           
           <button 
             onClick={() => setShowFilters(!showFilters)}
-            className="flex items-center gap-2 bg-white/5 border border-white/10 px-6 py-3 text-xs font-bold uppercase tracking-widest text-white hover:bg-white hover:text-brand-dark transition-all"
+            className="flex items-center gap-2 bg-white/5 border border-white/10 px-8 py-3 text-xs font-bold uppercase tracking-widest text-white hover:bg-white hover:text-brand-dark transition-all"
           >
             {showFilters ? <X size={16} /> : <SlidersHorizontal size={16} />}
             {showFilters ? "Close Filters" : "Filter Fleet"}
@@ -59,14 +59,14 @@ function ShopContent() {
               exit={{ height: 0, opacity: 0 }}
               className="overflow-hidden mb-12"
             >
-              <div className="bg-[#0a0a0a] border border-white/5 p-8 grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div className="bg-[#0a0a0a] border border-white/5 p-8 flex flex-col items-center gap-12">
                 
                 {/* Category Filter */}
-                <div>
-                  <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40 mb-6 flex items-center gap-2">
+                <div className="flex flex-col items-center w-full">
+                  <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40 mb-6 flex items-center justify-center gap-2">
                     <Filter size={12} /> Category
                   </h3>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 justify-center">
                     {categories.map((c) => (
                       <button
                         key={c}
@@ -85,11 +85,11 @@ function ShopContent() {
                 </div>
 
                 {/* Brand Filter */}
-                <div>
-                  <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40 mb-6 flex items-center gap-2">
+                <div className="flex flex-col items-center w-full">
+                  <h3 className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/40 mb-6 flex items-center justify-center gap-2">
                     <Filter size={12} /> Manufacturer
                   </h3>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 justify-center">
                     {brands.map((b) => (
                       <button
                         key={b}

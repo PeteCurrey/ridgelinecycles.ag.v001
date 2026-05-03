@@ -74,21 +74,21 @@ export default function WorkshopPage() {
       </section>
 
       {/* Trust Bar */}
-      <section className="py-8 bg-brand-bg/50 border-b">
+      <section className="py-12 bg-brand-bg/50 border-b border-white/5">
         <div className="container-custom flex flex-wrap justify-center gap-12 text-brand-dark/60 font-bold uppercase tracking-widest text-[10px]">
-           <div className="flex items-center gap-2"><CheckCircle size={14} /> Cytech Qualified</div>
-           <div className="flex items-center gap-2"><CheckCircle size={14} /> All Parts Guaranteed</div>
-           <div className="flex items-center gap-2"><CheckCircle size={14} /> Shimano Service Center</div>
-           <div className="flex items-center gap-2"><CheckCircle size={14} /> Specialized Approved</div>
+           <div className="flex items-center gap-3"><CheckCircle size={16} className="text-brand-accent" /> Cytech Level 3</div>
+           <div className="flex items-center gap-3"><CheckCircle size={16} className="text-brand-accent" /> Suspension Specialists</div>
+           <div className="flex items-center gap-3"><CheckCircle size={16} className="text-brand-accent" /> Shimano Service Center</div>
+           <div className="flex items-center gap-3"><CheckCircle size={16} className="text-brand-accent" /> SRAM / RockShox Certified</div>
         </div>
       </section>
 
       {/* Packages */}
-      <section className="section-padding">
+      <section className="section-padding bg-brand-bg">
         <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-display font-bold mb-4">Our Service Packages</h2>
-            <p className="text-brand-text/60 font-serif max-w-2xl mx-auto">Clear pricing, no hidden extras. We'll always call you before fitting any parts not included in the service.</p>
+          <div className="text-center mb-16 flex flex-col items-center">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-brand-dark uppercase tracking-tighter">Service Lab Packages</h2>
+            <p className="text-brand-text/60 font-serif max-w-2xl mx-auto text-lg leading-relaxed">Clear pricing, no hidden extras. We specialize in high-performance mountain bike maintenance, from bearing pivots to fork servicing.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -96,36 +96,36 @@ export default function WorkshopPage() {
               <div 
                 key={i} 
                 className={cn(
-                  "relative p-8 border border-gray-100 flex flex-col transition-all hover:shadow-xl",
-                  pkg.popular ? "bg-brand-dark text-white ring-2 ring-brand-accent scale-105 z-10 shadow-2xl" : "bg-white"
+                  "relative p-10 border border-gray-100 flex flex-col items-center text-center transition-all hover:shadow-2xl",
+                  pkg.popular ? "bg-brand-dark text-white ring-4 ring-brand-accent scale-105 z-10 shadow-2xl" : "bg-white"
                 )}
               >
                 {pkg.popular && (
-                  <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-accent text-white text-[10px] font-bold px-4 py-1 uppercase tracking-[0.2em]">
+                  <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-accent text-white text-[10px] font-bold px-6 py-2 uppercase tracking-[0.3em]">
                     Most Popular
                   </span>
                 )}
-                <div className="mb-6">{pkg.icon}</div>
-                <h3 className="text-2xl font-display font-bold mb-2">{pkg.name}</h3>
-                <div className="text-3xl font-bold mb-4">
+                <div className="mb-8">{pkg.icon}</div>
+                <h3 className="text-2xl font-display font-bold mb-4 uppercase tracking-tight">{pkg.name}</h3>
+                <div className="text-4xl font-bold mb-6 text-brand-accent">
                   {typeof pkg.price === 'number' ? `£${pkg.price}` : pkg.price}
                 </div>
-                <p className={cn("text-sm font-serif mb-8", pkg.popular ? "text-white/60" : "text-brand-text/60")}>
+                <p className={cn("text-sm font-serif mb-10 leading-relaxed", pkg.popular ? "text-white/60" : "text-brand-text/60")}>
                   {pkg.desc}
                 </p>
-                <ul className="space-y-3 mb-10 flex-grow">
+                <ul className="space-y-4 mb-12 flex-grow w-full">
                   {pkg.features.map((f, j) => (
-                    <li key={j} className="flex gap-2 text-xs font-medium">
-                      <CheckCircle size={14} className={pkg.popular ? "text-brand-accent" : "text-brand-accent"} />
+                    <li key={j} className="flex items-center justify-center gap-3 text-[11px] font-bold uppercase tracking-widest border-b border-gray-100/10 pb-2 last:border-0">
+                      <CheckCircle size={14} className="text-brand-accent shrink-0" />
                       {f}
                     </li>
                   ))}
                 </ul>
                 <button className={cn(
-                  "w-full py-4 text-xs font-bold uppercase tracking-widest transition-all",
-                  pkg.popular ? "bg-brand-accent text-white hover:bg-opacity-90" : "bg-brand-bg text-brand-dark hover:bg-brand-accent hover:text-white"
+                  "w-full py-5 text-[11px] font-bold uppercase tracking-[0.3em] transition-all",
+                  pkg.popular ? "bg-brand-accent text-white hover:bg-white hover:text-brand-dark" : "bg-brand-bg text-brand-dark hover:bg-brand-accent hover:text-white"
                 )}>
-                  Select Package
+                  Select Plan
                 </button>
               </div>
             ))}
@@ -134,38 +134,31 @@ export default function WorkshopPage() {
       </section>
 
       {/* Process Section */}
-      <section className="section-padding bg-brand-bg/20">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-             <div className="relative aspect-video bg-brand-dark overflow-hidden">
-                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1571333250630-f0230c320b6d?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-70" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                   <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20">
-                      <Zap size={32} />
-                   </div>
+      <section className="section-padding bg-white">
+        <div className="container-custom flex flex-col items-center text-center">
+           <div className="max-w-4xl mb-20 flex flex-col items-center">
+              <h2 className="text-5xl md:text-7xl font-display font-black uppercase tracking-tighter mb-8 text-brand-dark leading-[0.9]">What to expect</h2>
+              <p className="text-brand-text/50 font-serif text-xl max-w-2xl">From the moment you arrive at our Bakewell lab, your bike is treated with surgical precision.</p>
+           </div>
+           
+           <div className="grid grid-cols-1 md:grid-cols-3 gap-16 w-full max-w-6xl">
+              {[
+                { step: "01", title: "Drop Off", desc: "Bring your mountain bike to our Bakewell workshop or arrange a local collection.", icon: <Calendar size={32} /> },
+                { step: "02", title: "Diagnosis", desc: "Our mechanics perform a 50-point mountain bike check and call you with a fixed quote.", icon: <Clock size={32} /> },
+                { step: "03", title: "Trail Ready", desc: "Collect your bike, tuned and ready for the Peak District singletrack.", icon: <Award size={32} /> }
+              ].map((s, i) => (
+                <div key={i} className="flex flex-col items-center">
+                  <div className="text-6xl font-display font-black text-brand-accent opacity-10 mb-6">{s.step}</div>
+                  <div className="w-16 h-16 rounded-full bg-brand-bg flex items-center justify-center text-brand-accent mb-6">
+                    {s.icon}
+                  </div>
+                  <h4 className="text-2xl font-display font-bold mb-4 uppercase tracking-tight">{s.title}</h4>
+                  <p className="text-brand-text/60 font-serif leading-relaxed text-sm">{s.desc}</p>
                 </div>
-             </div>
-             <div>
-                <h2 className="text-4xl font-display font-bold mb-8">What to expect</h2>
-                <div className="space-y-8">
-                  {[
-                    { step: "01", title: "Drop Off", desc: "Bring your bike to our Bakewell workshop or arrange a local collection.", icon: <Calendar size={24} /> },
-                    { step: "02", title: "Diagnosis", desc: "Our mechanics perform a 20-point check and call you with a fixed quote.", icon: <Clock size={24} /> },
-                    { step: "03", title: "Ready to Ride", desc: "Collect your bike, tuned and ready for the Peak District trails.", icon: <Award size={24} /> }
-                  ].map((s, i) => (
-                    <div key={i} className="flex gap-6">
-                      <div className="text-3xl font-display font-black text-brand-accent opacity-20">{s.step}</div>
-                      <div>
-                        <h4 className="text-xl font-display font-bold mb-2">{s.title}</h4>
-                        <p className="text-brand-text/60 font-serif leading-relaxed">{s.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-             </div>
-          </div>
+              ))}
+           </div>
         </div>
-      </section>
+      </section>>
 
       {/* Booking Form */}
       <section id="booking" className="section-padding">
