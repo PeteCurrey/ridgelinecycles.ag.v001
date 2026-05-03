@@ -158,7 +158,7 @@ export default function WorkshopPage() {
               ))}
            </div>
         </div>
-      </section>>
+      </section>
 
       {/* Booking Form */}
       <section id="booking" className="section-padding">
