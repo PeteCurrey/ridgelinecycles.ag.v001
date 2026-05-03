@@ -1,0 +1,292 @@
+export type Product = {
+  id: string;
+  name: string;
+  brand: string;
+  category: "Road" | "Mountain" | "Gravel" | "E-Bike" | "Kids" | "Accessories" | "Clothing" | "Parts";
+  price: number;
+  salePrice?: number;
+  description: string;
+  image: string;
+  stock: Record<string, number>; // size: count
+  colors: string[];
+  sizes: string[];
+  specs: Record<string, string>;
+  isFeatured?: boolean;
+  status: "Active" | "Draft";
+  sku: string;
+};
+
+export const products: Product[] = [
+  {
+    id: "trek-domane-al-4",
+    sku: "TRK-DOM-AL4",
+    name: "Domane AL 4 Gen 4",
+    brand: "Trek",
+    category: "Road",
+    price: 1700,
+    description: "The Domane AL 4 is a fast and versatile road bike that's a perfect starting point for anyone looking to get into road riding.",
+    image: "/products/trek-domane.jpg",
+    stock: { "52": 2, "54": 5, "56": 3 },
+    colors: ["Era White", "Blue Sage"],
+    sizes: ["52", "54", "56", "58"],
+    specs: { "Frame": "Aluminum", "Groupset": "Shimano Tiagra" },
+    isFeatured: true,
+    status: "Active"
+  },
+  {
+    id: "specialized-tarmac-sl8",
+    sku: "SPZ-TAR-SL8",
+    name: "Tarmac SL8 Expert",
+    brand: "Specialized",
+    category: "Road",
+    price: 6000,
+    description: "Nothing is faster than the Tarmac SL8. It's the most aerodynamic road bike we've ever made.",
+    image: "/products/specialized-tarmac.jpg",
+    stock: { "54": 1, "56": 1 },
+    colors: ["Satin Powder Indigo"],
+    sizes: ["52", "54", "56"],
+    specs: { "Frame": "Carbon", "Groupset": "SRAM Rival eTap" },
+    isFeatured: true,
+    status: "Active"
+  },
+  {
+    id: "cannondale-synapse-2",
+    sku: "CAN-SYN-2",
+    name: "Synapse Carbon 2 LE",
+    brand: "Cannondale",
+    category: "Road",
+    price: 3800,
+    description: "Road riding redefined. Smooth, fast and confident.",
+    image: "/products/cannondale-synapse.jpg",
+    stock: { "54": 2, "56": 2 },
+    colors: ["Quicksilver"],
+    sizes: ["52", "54", "56"],
+    specs: { "Frame": "Carbon", "Groupset": "Shimano 105 Di2" },
+    status: "Active"
+  },
+  {
+    id: "giant-tcr-advanced-1",
+    sku: "GNT-TCR-ADV1",
+    name: "TCR Advanced 1 Disc",
+    brand: "Giant",
+    category: "Road",
+    price: 2799,
+    description: "The ultimate all-rounder. Light, stiff and ultra-efficient.",
+    image: "/products/giant-tcr.jpg",
+    stock: { "M": 3, "ML": 2 },
+    colors: ["Amber Glow"],
+    sizes: ["S", "M", "ML", "L"],
+    specs: { "Frame": "Composite", "Groupset": "Shimano 105 Di2" },
+    status: "Active"
+  },
+  {
+    id: "whyte-429-v2",
+    sku: "WHY-429-V2",
+    name: "429 V2 Hardtail",
+    brand: "Whyte",
+    category: "Mountain",
+    price: 1150,
+    description: "Award-winning geometry and a 120mm travel fork.",
+    image: "/products/whyte-429.jpg",
+    stock: { "M": 5, "L": 4 },
+    colors: ["Matt Moss"],
+    sizes: ["S", "M", "L", "XL"],
+    specs: { "Frame": "Alloy", "Fork": "RockShox Recon" },
+    status: "Active"
+  },
+  {
+    id: "trek-fuel-ex-8",
+    sku: "TRK-FEX-8",
+    name: "Fuel EX 8 Gen 6",
+    brand: "Trek",
+    category: "Mountain",
+    price: 3850,
+    description: "A versatile trail bike that's ready for anything.",
+    image: "/products/trek-fuel.jpg",
+    stock: { "M": 2, "L": 2 },
+    colors: ["Matte Black"],
+    sizes: ["S", "M", "L", "XL"],
+    specs: { "Frame": "Alloy", "Fork": "Fox Rhythm 34" },
+    status: "Active"
+  },
+  {
+    id: "orbea-occam-h20",
+    sku: "ORB-OCC-H20",
+    name: "Occam H20 LT",
+    brand: "Orbea",
+    category: "Mountain",
+    price: 3299,
+    description: "The perfect balance between efficiency and trail performance.",
+    image: "/products/orbea-occam.jpg",
+    stock: { "M": 1, "L": 1 },
+    colors: ["Metallic Mulberry"],
+    sizes: ["S", "M", "L", "XL"],
+    specs: { "Frame": "Alloy", "Fork": "Fox 36 Performance" },
+    status: "Active"
+  },
+  {
+    id: "giant-reign-2",
+    sku: "GNT-REI-2",
+    name: "Reign 2",
+    brand: "Giant",
+    category: "Mountain",
+    price: 2999,
+    description: "Enduro-focused and built for the rowdiest terrain.",
+    image: "/products/giant-reign.jpg",
+    stock: { "M": 2, "L": 1 },
+    colors: ["Black Diamond"],
+    sizes: ["S", "M", "L", "XL"],
+    specs: { "Frame": "Alloy", "Fork": "RockShox Yari RC" },
+    status: "Active"
+  },
+  {
+    id: "cannondale-topstone-1",
+    sku: "CAN-TOP-1",
+    name: "Topstone 1",
+    brand: "Cannondale",
+    category: "Gravel",
+    price: 2100,
+    description: "An amazingly capable, versatile gravel road bike.",
+    image: "/products/cannondale-topstone.jpg",
+    stock: { "M": 4, "L": 3 },
+    colors: ["Slate Grey"],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    specs: { "Frame": "Alloy", "Groupset": "Shimano GRX 810" },
+    status: "Active"
+  },
+  {
+    id: "specialized-diverge-comp",
+    sku: "SPZ-DIV-CMP",
+    name: "Diverge Comp E5",
+    brand: "Specialized",
+    category: "Gravel",
+    price: 2500,
+    description: "The ultimate getaway vehicle for gravel adventures.",
+    image: "/products/specialized-diverge.jpg",
+    stock: { "54": 2, "56": 2 },
+    colors: ["Gloss Blaze"],
+    sizes: ["49", "52", "54", "56", "58", "61"],
+    specs: { "Frame": "Alloy", "Groupset": "SRAM Apex 1" },
+    status: "Active"
+  },
+  {
+    id: "orbea-terra-h30",
+    sku: "ORB-TER-H30",
+    name: "Terra H30",
+    brand: "Orbea",
+    category: "Gravel",
+    price: 2299,
+    description: "Designed for comfort and performance on any surface.",
+    image: "/products/orbea-terra.jpg",
+    stock: { "M": 3, "L": 2 },
+    colors: ["Night Black"],
+    sizes: ["XS", "S", "M", "L", "XL"],
+    specs: { "Frame": "Alloy", "Groupset": "Shimano GRX 400" },
+    status: "Active"
+  },
+  {
+    id: "trek-rail-7",
+    sku: "TRK-RAI-7",
+    name: "Rail 7 Gen 3",
+    brand: "Trek",
+    category: "E-Bike",
+    price: 5400,
+    description: "A long-travel electric mountain bike built for ripping.",
+    image: "/products/trek-rail.jpg",
+    stock: { "M": 1, "L": 1 },
+    colors: ["Mercury"],
+    sizes: ["S", "M", "L", "XL"],
+    specs: { "Frame": "Alloy", "Motor": "Bosch Performance CX" },
+    status: "Active"
+  },
+  {
+    id: "giant-fathom-e-2",
+    sku: "GNT-FAT-E2",
+    name: "Fathom E+ 2",
+    brand: "Giant",
+    category: "E-Bike",
+    price: 2699,
+    description: "The perfect introduction to E-MTB riding.",
+    image: "/products/giant-fathom.jpg",
+    stock: { "M": 2, "L": 2 },
+    colors: ["Black"],
+    sizes: ["S", "M", "L", "XL"],
+    specs: { "Frame": "Alloy", "Motor": "SyncDrive Sport" },
+    status: "Active"
+  },
+  {
+    id: "islabikes-beinn-24",
+    sku: "ISL-BEI-24",
+    name: "Beinn 24",
+    brand: "Islabikes",
+    category: "Kids",
+    price: 549,
+    description: "The legendary multi-purpose kids' bike.",
+    image: "/products/islabikes-beinn.jpg",
+    stock: { "One Size": 5 },
+    colors: ["Teal", "Red"],
+    sizes: ["One Size"],
+    specs: { "Frame": "Alloy", "Weight": "8.2kg" },
+    status: "Active"
+  },
+  {
+    id: "frog-62",
+    sku: "FRG-62",
+    name: "Frog 62",
+    brand: "Frog",
+    category: "Kids",
+    price: 465,
+    description: "A lightweight, 24-inch hybrid bike for 8-10 year olds.",
+    image: "/products/frog-62.jpg",
+    stock: { "One Size": 8 },
+    colors: ["Electric Blue", "Pink"],
+    sizes: ["One Size"],
+    specs: { "Frame": "Alloy", "Weight": "9.2kg" },
+    status: "Active"
+  },
+  {
+    id: "met-trenta-3k",
+    sku: "MET-TRN-3K",
+    name: "MET Trenta 3K Carbon",
+    brand: "MET",
+    category: "Accessories",
+    price: 270,
+    description: "The most advanced road cycling helmet we've ever made.",
+    image: "/products/met-trenta.jpg",
+    stock: { "M": 10, "L": 5 },
+    colors: ["White Carbon"],
+    sizes: ["S", "M", "L"],
+    specs: { "Type": "Helmet", "Material": "Carbon" },
+    status: "Active"
+  },
+  {
+    id: "exposure-strada",
+    sku: "EXP-STR-MK12",
+    name: "Exposure Strada Mk12 SB",
+    brand: "Exposure",
+    category: "Accessories",
+    price: 315,
+    description: "The ultimate road-specific front light.",
+    image: "/products/exposure-strada.jpg",
+    stock: { "One Size": 12 },
+    colors: ["Black"],
+    sizes: ["One Size"],
+    specs: { "Lumens": "1700", "Battery": "11600mAh" },
+    status: "Active"
+  },
+  {
+    id: "hiplok-d1000",
+    sku: "HIP-D1000",
+    name: "Hiplok D1000 Anti-Angle Grinder Lock",
+    brand: "Hiplok",
+    category: "Accessories",
+    price: 250,
+    description: "The world's first portable anti-angle grinder bike lock.",
+    image: "/products/hiplok-d1000.jpg",
+    stock: { "One Size": 15 },
+    colors: ["Black"],
+    sizes: ["One Size"],
+    specs: { "Rating": "Sold Secure Diamond", "Weight": "1.8kg" },
+    status: "Active"
+  }
+];

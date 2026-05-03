@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Shield, Wrench, Truck, RotateCcw, Camera } from "lucide-react";
-import { products } from "@/data/products";
+import { products } from "@/lib/products";
 import ProductCard from "@/components/shop/ProductCard";
 
 const categories = [

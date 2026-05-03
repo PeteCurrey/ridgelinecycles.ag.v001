@@ -3,15 +3,15 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ShoppingBag, Menu, X, ChevronDown } from "lucide-react";
+import { ShoppingBag, Menu, X, ShieldCheck } from "lucide-react";
 import { useCart } from "@/context/CartContext";
+import { useSession } from "next-auth/react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
   { name: "Shop", href: "/shop" },
   { name: "Workshop", href: "/workshop" },
   { name: "About", href: "/about" },
-  { name: "Blog", href: "#" },
 ];
 
 export default function Navbar() {
@@ -19,6 +19,7 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const { cartCount, setIsCartOpen } = useCart();
+  const { data: session } = useSession();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,6 +75,15 @@ export default function Navbar() {
 
         {/* Icons */}
         <div className="flex items-center gap-4">
+          {session && (
+            <Link 
+              href="/admin/dashboard" 
+              className="hidden lg:flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-accent hover:opacity-80 transition-all"
+            >
+              <ShieldCheck size={18} />
+              Admin
+            </Link>
+          )}
           <button 
             className="relative p-2 text-brand-dark hover:text-brand-accent transition-colors"
             onClick={() => setIsCartOpen(true)}
@@ -109,6 +119,15 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
+            {session && (
+              <Link 
+                href="/admin/dashboard" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-brand-accent"
+              >
+                Admin Panel
+              </Link>
+            )}
           </div>
           <div className="mt-auto pb-12 border-t border-white/10 pt-8">
             <p className="text-sm text-white/50 mb-4 font-sans">BAKEWELL, PEAK DISTRICT</p>

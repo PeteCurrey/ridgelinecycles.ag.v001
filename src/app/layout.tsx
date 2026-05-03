@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { Playfair_Display, DM_Sans, Lora, Geist } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
+import NextAuthProvider from "@/components/providers/NextAuthProvider";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CartDrawer from "@/components/cart/CartDrawer";
+import { Toaster } from "sonner";
 import { cn } from "@/lib/utils";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
@@ -38,14 +40,17 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn("h-full antialiased", "font-sans", geist.variable)}>
       <body className={`${playfair.variable} ${dmSans.variable} ${lora.variable} font-sans bg-brand-bg text-brand-text min-h-full flex flex-col`}>
-        <CartProvider>
-          <Navbar />
-          <CartDrawer />
-          <main className="flex-grow pt-20">
-            {children}
-          </main>
-          <Footer />
-        </CartProvider>
+        <NextAuthProvider>
+          <CartProvider>
+            <Navbar />
+            <CartDrawer />
+            <main className="flex-grow pt-20">
+              {children}
+            </main>
+            <Footer />
+            <Toaster position="top-right" richColors />
+          </CartProvider>
+        </NextAuthProvider>
       </body>
     </html>
   );

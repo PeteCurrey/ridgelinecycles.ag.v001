@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Plus, Heart, ShoppingBag } from "lucide-react";
-import { Product } from "@/data/products";
+import { Product } from "@/lib/products";
 import { useCart } from "@/context/CartContext";
 import { cn } from "@/lib/utils";
 

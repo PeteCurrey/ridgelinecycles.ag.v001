@@ -15,7 +15,7 @@ import {
   CheckCircle2,
   Clock
 } from "lucide-react";
-import { products, Product } from "@/data/products";
+import { products, Product } from "@/lib/products";
 import { useCart } from "@/context/CartContext";
 import ProductCard from "@/components/shop/ProductCard";
 import { cn } from "@/lib/utils";

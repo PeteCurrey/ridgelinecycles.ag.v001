@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { products, Product } from "@/data/products";
+import { products, Product } from "@/lib/products";
 import ProductCard from "@/components/shop/ProductCard";
 import { ChevronDown, SlidersHorizontal, X } from "lucide-react";
 import { cn } from "@/lib/utils";
