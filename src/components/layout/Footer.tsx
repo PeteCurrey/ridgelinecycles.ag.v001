@@ -15,7 +15,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-white/60 mb-6 font-serif leading-relaxed">
-              Family-run since 2009. We live and breathe Peak District cycling. Professional workshop, premium bikes, and expert local knowledge.
+              Family-run since 2009. We live and breathe Peak District technical trails. Professional suspension lab, elite mountain bikes, and expert local trail knowledge.
             </p>
             <div className="flex gap-4">
               <Link href="#" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-brand-accent hover:border-brand-accent transition-all">
@@ -34,11 +34,11 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-display font-bold mb-6 uppercase tracking-widest text-brand-accent">Shop</h4>
             <ul className="flex flex-col gap-3 text-white/70">
-              <li><Link href="/shop?category=Road" className="hover:text-white transition-colors">Road Bikes</Link></li>
-              <li><Link href="/shop?category=Gravel" className="hover:text-white transition-colors">Gravel Bikes</Link></li>
-              <li><Link href="/shop?category=Mountain" className="hover:text-white transition-colors">Mountain Bikes</Link></li>
-              <li><Link href="/shop?category=E-Bike" className="hover:text-white transition-colors">Electric Bikes</Link></li>
-              <li><Link href="/shop?category=Kids" className="hover:text-white transition-colors">Kids' Bikes</Link></li>
+              <li><Link href="/shop?category=Trail" className="hover:text-white transition-colors">Trail Bikes</Link></li>
+              <li><Link href="/shop?category=Enduro" className="hover:text-white transition-colors">Enduro Bikes</Link></li>
+              <li><Link href="/shop?category=Downhill" className="hover:text-white transition-colors">Downhill Rigs</Link></li>
+              <li><Link href="/shop?category=E-MTB" className="hover:text-white transition-colors">E-MTB</Link></li>
+              <li><Link href="/shop?category=Youth+MTB" className="hover:text-white transition-colors">Youth MTB</Link></li>
             </ul>
           </div>
 

@@ -25,9 +25,9 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "Ridgeline Cycles | Peak Performance. Local Knowledge.",
-  description: "Independent bike shop based in Bakewell, Peak District. Specialists in road, gravel and trail bikes. Professional workshop on-site.",
-  keywords: "bike shop, Bakewell, Peak District, cycling, road bikes, gravel bikes, MTB, workshop, bike repair",
+  title: "Ridgeline Cycles | Mountain Performance. Local Knowledge.",
+  description: "Independent mountain bike specialist based in Bakewell, Peak District. Technical experts in Trail, Enduro, and E-MTB. Professional suspension lab on-site.",
+  keywords: "MTB shop, Bakewell, Peak District, mountain bikes, Enduro bikes, E-MTB, suspension service, bike repair",
 };
 
 export default function RootLayout({

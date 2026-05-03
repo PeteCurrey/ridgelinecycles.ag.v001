@@ -29,7 +29,7 @@ function ShopContent() {
   }, [category, brand]);
 
   return (
-    <div className="bg-brand-bg text-brand-text min-h-screen pt-24 pb-32">
+    <div className="bg-[#050505] text-brand-text min-h-screen pt-24 pb-32">
       <div className="container-custom">
         
         {/* Header & Filter Toggle */}

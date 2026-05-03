@@ -16,144 +16,157 @@ import { cn } from "@/lib/utils";
 
 const packages = [
   {
-    name: "Bronze Service",
-    price: 45,
-    desc: "The essential safety check and tune-up. Perfect for regular commuters.",
-    features: ["Safety check", "Adjust brakes & gears", "Chain lube", "Tyre pressure check", "Bolt torque check"],
+    name: "Trail Tune",
+    price: 55,
+    desc: "Precision calibration for your daily trail rig. Optimized for Peak District grit.",
+    features: ["50-point safety inspection", "Gear indexing & alignment", "Brake bleed & modulation", "Pivot bolt torque check", "Suspension pressure set"],
     icon: <Settings size={24} className="text-brand-accent" />
   },
   {
-    name: "Silver Service",
-    price: 85,
-    desc: "Comprehensive annual service to keep your ride smooth and reliable.",
-    features: ["Bronze plus...", "Wheel trueing", "Drivetrain degrease & clean", "Bleed hydraulic brakes", "Full frame clean"],
+    name: "Enduro Overhaul",
+    price: 95,
+    desc: "Comprehensive deep-clean and technical calibration for aggressive riding.",
+    features: ["Trail Tune plus...", "Full drivetrain degrease", "Wheel trueing & tension", "Bottom bracket service", "Lower leg fork service"],
     icon: <Zap size={24} className="text-brand-accent" />,
     popular: true
   },
   {
-    name: "Gold Service",
-    price: 145,
-    desc: "The ultimate strip and rebuild. Restores your bike to showroom condition.",
-    features: ["Silver plus...", "Full strip to frame", "Bearing check & regrease", "New inner cables included", "Free collection (10 miles)"],
+    name: "Championship Rebuild",
+    price: 175,
+    desc: "The ultimate race-ready strip and rebuild. No bolt left unturned.",
+    features: ["Enduro plus...", "Full strip to frame", "Pivot bearing replacement", "New internal cabling", "Custom suspension tuning"],
     icon: <Wrench size={24} className="text-brand-accent" />
   },
   {
-    name: "Custom / Repairs",
-    price: "From 25",
-    desc: "Specific fixes, wheel builds, or suspension tuning. Just ask.",
-    features: ["Puncture repair", "Gear index", "Wheel building", "Suspension servicing", "Custom component fitting"],
+    name: "Custom Lab",
+    price: "From 35",
+    desc: "Specific technical fixes, custom wheel builds, or frame protection.",
+    features: ["Suspension servicing", "Wheel building", "Invisiframe fitting", "E-MTB diagnostics", "Custom builds"],
     icon: <MessageSquare size={24} className="text-brand-accent" />
   }
 ];
 
 export default function WorkshopPage() {
   return (
-    <div className="bg-white">
+    <div className="bg-brand-bg text-brand-text">
       {/* Hero */}
-      <section className="relative py-24 md:py-32 bg-brand-dark text-white overflow-hidden">
+      <section className="relative py-32 md:py-48 flex flex-col items-center text-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-           <div className="absolute inset-0 bg-brand-dark/80 z-10" />
-           <div className="w-full h-full bg-[url('https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&q=80')] bg-cover bg-center" />
+           <div className="absolute inset-0 bg-brand-bg/90 z-10" />
+           <img 
+             src="https://images.unsplash.com/photo-1544191696-102dbb1eaca5?auto=format&fit=crop&q=80" 
+             alt="Technical MTB Workshop" 
+             className="w-full h-full object-cover scale-110 blur-[2px]" 
+           />
         </div>
         
-        <div className="container-custom relative z-20 text-center max-w-4xl">
+        <div className="container-custom relative z-20 max-w-4xl flex flex-col items-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="flex flex-col items-center"
           >
-            <span className="text-brand-accent font-bold uppercase tracking-[0.4em] text-xs mb-6 block">CYTECH LEVEL 3 MECHANICS</span>
-            <h1 className="text-5xl md:text-7xl font-display font-bold mb-8">Professional servicing from people who ride</h1>
-            <p className="text-xl font-serif text-white/70 leading-relaxed mb-10">
-              Your bike is an investment in your freedom. We treat it like our own, ensuring every bolt is torqued and every gear is indexed to Peak District perfection.
+            <span className="text-brand-accent font-bold uppercase tracking-[0.5em] text-xs mb-8 block">03 // SUSPENSION LAB</span>
+            <h1 className="text-6xl md:text-[8rem] font-display font-black mb-10 leading-[0.85] uppercase tracking-tighter mix-blend-difference">
+              Surgical <br /> Precision.
+            </h1>
+            <p className="text-xl md:text-2xl font-serif text-white/60 leading-relaxed mb-14 max-w-2xl mx-auto italic">
+              "We don't just fix bikes. We optimize them for the most technical terrain in the UK."
             </p>
-            <div className="flex justify-center">
-               <a href="#booking" className="btn-primary px-12">Book Your Slot</a>
-            </div>
+            <a href="#booking" className="bg-white text-brand-dark px-12 py-5 uppercase font-bold text-xs tracking-[0.3em] hover:bg-brand-accent hover:text-white transition-all duration-300">
+               Request Service Slot
+            </a>
           </motion.div>
         </div>
       </section>
 
       {/* Trust Bar */}
-      <section className="py-12 bg-brand-bg/50 border-b border-white/5">
-        <div className="container-custom flex flex-wrap justify-center gap-12 text-brand-dark/60 font-bold uppercase tracking-widest text-[10px]">
-           <div className="flex items-center gap-3"><CheckCircle size={16} className="text-brand-accent" /> Cytech Level 3</div>
-           <div className="flex items-center gap-3"><CheckCircle size={16} className="text-brand-accent" /> Suspension Specialists</div>
-           <div className="flex items-center gap-3"><CheckCircle size={16} className="text-brand-accent" /> Shimano Service Center</div>
-           <div className="flex items-center gap-3"><CheckCircle size={16} className="text-brand-accent" /> SRAM / RockShox Certified</div>
+      <section className="py-16 bg-black/40 border-y border-white/5">
+        <div className="container-custom flex flex-wrap justify-center gap-12 text-white/40 font-bold uppercase tracking-[0.2em] text-[10px]">
+           <div className="flex items-center gap-3 hover:text-white transition-colors"><CheckCircle size={14} className="text-brand-accent" /> Cytech Level 3</div>
+           <div className="flex items-center gap-3 hover:text-white transition-colors"><CheckCircle size={14} className="text-brand-accent" /> Suspension Tuning</div>
+           <div className="flex items-center gap-3 hover:text-white transition-colors"><CheckCircle size={14} className="text-brand-accent" /> Shimano Service Center</div>
+           <div className="flex items-center gap-3 hover:text-white transition-colors"><CheckCircle size={14} className="text-brand-accent" /> RockShox Master Lab</div>
         </div>
       </section>
 
       {/* Packages */}
-      <section className="section-padding bg-brand-bg">
+      <section className="py-32 bg-brand-bg relative">
         <div className="container-custom">
-          <div className="text-center mb-16 flex flex-col items-center">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-brand-dark uppercase tracking-tighter">Service Lab Packages</h2>
-            <p className="text-brand-text/60 font-serif max-w-2xl mx-auto text-lg leading-relaxed">Clear pricing, no hidden extras. We specialize in high-performance mountain bike maintenance, from bearing pivots to fork servicing.</p>
+          <div className="text-center mb-24 flex flex-col items-center">
+            <span className="text-brand-accent font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block text-center">Service Packages</span>
+            <h2 className="text-5xl md:text-7xl font-display font-black mb-8 text-white uppercase tracking-tighter">Elite Maintenance</h2>
+            <p className="text-white/50 font-serif max-w-2xl mx-auto text-lg leading-relaxed">From pivot bearings to custom suspension tuning, our mechanics specialize in high-performance mountain bike calibration.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {packages.map((pkg, i) => (
-              <div 
+              <motion.div 
                 key={i} 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
                 className={cn(
-                  "relative p-10 border border-gray-100 flex flex-col items-center text-center transition-all hover:shadow-2xl",
-                  pkg.popular ? "bg-brand-dark text-white ring-4 ring-brand-accent scale-105 z-10 shadow-2xl" : "bg-white"
+                  "relative p-12 border border-white/5 flex flex-col items-center text-center transition-all duration-500 hover:border-brand-accent group",
+                  pkg.popular ? "bg-[#0a0a0a] ring-1 ring-brand-accent/50 z-10 shadow-[0_0_50px_rgba(226,74,34,0.1)]" : "bg-transparent"
                 )}
               >
                 {pkg.popular && (
-                  <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-accent text-white text-[10px] font-bold px-6 py-2 uppercase tracking-[0.3em]">
-                    Most Popular
+                  <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-accent text-white text-[9px] font-bold px-8 py-2 uppercase tracking-[0.4em] z-20">
+                    Master Class
                   </span>
                 )}
-                <div className="mb-8">{pkg.icon}</div>
-                <h3 className="text-2xl font-display font-bold mb-4 uppercase tracking-tight">{pkg.name}</h3>
-                <div className="text-4xl font-bold mb-6 text-brand-accent">
+                <div className="mb-10 text-white/40 group-hover:text-brand-accent transition-colors duration-500">{pkg.icon}</div>
+                <h3 className="text-2xl font-display font-black mb-4 uppercase tracking-tight text-white">{pkg.name}</h3>
+                <div className="text-4xl font-sans font-black mb-8 text-white">
                   {typeof pkg.price === 'number' ? `£${pkg.price}` : pkg.price}
                 </div>
-                <p className={cn("text-sm font-serif mb-10 leading-relaxed", pkg.popular ? "text-white/60" : "text-brand-text/60")}>
+                <p className={cn("text-sm font-serif mb-12 leading-relaxed min-h-[60px]", pkg.popular ? "text-white/60" : "text-white/40")}>
                   {pkg.desc}
                 </p>
-                <ul className="space-y-4 mb-12 flex-grow w-full">
+                <ul className="space-y-4 mb-16 flex-grow w-full">
                   {pkg.features.map((f, j) => (
-                    <li key={j} className="flex items-center justify-center gap-3 text-[11px] font-bold uppercase tracking-widest border-b border-gray-100/10 pb-2 last:border-0">
-                      <CheckCircle size={14} className="text-brand-accent shrink-0" />
+                    <li key={j} className="flex items-center justify-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-white/50 border-b border-white/5 pb-3 last:border-0">
+                      <div className="w-1 h-1 rounded-full bg-brand-accent" />
                       {f}
                     </li>
                   ))}
                 </ul>
                 <button className={cn(
-                  "w-full py-5 text-[11px] font-bold uppercase tracking-[0.3em] transition-all",
-                  pkg.popular ? "bg-brand-accent text-white hover:bg-white hover:text-brand-dark" : "bg-brand-bg text-brand-dark hover:bg-brand-accent hover:text-white"
+                  "w-full py-5 text-[10px] font-bold uppercase tracking-[0.3em] transition-all duration-300",
+                  pkg.popular ? "bg-brand-accent text-white hover:bg-white hover:text-brand-dark" : "bg-white/5 text-white hover:bg-brand-accent"
                 )}>
-                  Select Plan
+                  Select Configuration
                 </button>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Process Section */}
-      <section className="section-padding bg-white">
+      <section className="py-32 bg-black flex flex-col items-center">
         <div className="container-custom flex flex-col items-center text-center">
-           <div className="max-w-4xl mb-20 flex flex-col items-center">
-              <h2 className="text-5xl md:text-7xl font-display font-black uppercase tracking-tighter mb-8 text-brand-dark leading-[0.9]">What to expect</h2>
-              <p className="text-brand-text/50 font-serif text-xl max-w-2xl">From the moment you arrive at our Bakewell lab, your bike is treated with surgical precision.</p>
+           <div className="max-w-4xl mb-32 flex flex-col items-center">
+              <span className="text-brand-accent font-bold uppercase tracking-[0.3em] text-[10px] mb-8 block">The Protocol</span>
+              <h2 className="text-6xl md:text-[9rem] font-display font-black uppercase tracking-tighter mb-10 text-white leading-[0.8] mix-blend-difference">Precision <br /> Workflow</h2>
            </div>
            
-           <div className="grid grid-cols-1 md:grid-cols-3 gap-16 w-full max-w-6xl">
+           <div className="grid grid-cols-1 md:grid-cols-3 gap-24 w-full max-w-6xl">
               {[
-                { step: "01", title: "Drop Off", desc: "Bring your mountain bike to our Bakewell workshop or arrange a local collection.", icon: <Calendar size={32} /> },
-                { step: "02", title: "Diagnosis", desc: "Our mechanics perform a 50-point mountain bike check and call you with a fixed quote.", icon: <Clock size={32} /> },
-                { step: "03", title: "Trail Ready", desc: "Collect your bike, tuned and ready for the Peak District singletrack.", icon: <Award size={32} /> }
+                { step: "01", title: "Intake", desc: "Digital diagnosis and physical inspection of your MTB frame and components.", icon: <Calendar size={32} /> },
+                { step: "02", title: "Execution", desc: "Surgical disassembly and calibration using pro-tier tools and genuine parts.", icon: <Clock size={32} /> },
+                { step: "03", title: "Validation", desc: "Rigorous testing to ensure your rig is ready for the technical Peak District trails.", icon: <Award size={32} /> }
               ].map((s, i) => (
-                <div key={i} className="flex flex-col items-center">
-                  <div className="text-6xl font-display font-black text-brand-accent opacity-10 mb-6">{s.step}</div>
-                  <div className="w-16 h-16 rounded-full bg-brand-bg flex items-center justify-center text-brand-accent mb-6">
+                <div key={i} className="flex flex-col items-center group">
+                  <div className="text-8xl font-display font-black text-white/5 mb-[-4rem] group-hover:text-brand-accent/10 transition-colors duration-700">{s.step}</div>
+                  <div className="w-20 h-20 bg-white/5 flex items-center justify-center text-brand-accent mb-8 border border-white/5 group-hover:border-brand-accent/20 transition-all">
                     {s.icon}
                   </div>
-                  <h4 className="text-2xl font-display font-bold mb-4 uppercase tracking-tight">{s.title}</h4>
-                  <p className="text-brand-text/60 font-serif leading-relaxed text-sm">{s.desc}</p>
+                  <h4 className="text-2xl font-display font-black mb-4 uppercase tracking-tight text-white">{s.title}</h4>
+                  <p className="text-white/40 font-serif leading-relaxed text-sm max-w-[250px]">{s.desc}</p>
                 </div>
               ))}
            </div>
@@ -161,60 +174,61 @@ export default function WorkshopPage() {
       </section>
 
       {/* Booking Form */}
-      <section id="booking" className="section-padding">
+      <section id="booking" className="py-40 bg-brand-bg border-t border-white/5 flex flex-col items-center">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto bg-white border border-gray-100 shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-5">
-            <div className="md:col-span-2 bg-brand-dark text-white p-12 flex flex-col justify-between">
+          <div className="max-w-6xl mx-auto bg-[#050505] border border-white/5 shadow-[0_0_100px_rgba(0,0,0,1)] overflow-hidden grid grid-cols-1 lg:grid-cols-5">
+            <div className="lg:col-span-2 bg-[#0a0a0a] text-white p-16 flex flex-col justify-between border-r border-white/5">
                <div>
-                  <h3 className="text-3xl font-display font-bold mb-6">Book your service</h3>
-                  <p className="text-white/60 font-serif mb-8 leading-relaxed">
-                    Once you submit the form, our team will contact you to confirm a drop-off time and discuss your requirements.
+                  <span className="text-brand-accent font-bold uppercase tracking-[0.3em] text-[10px] mb-8 block">Booking Interface</span>
+                  <h3 className="text-5xl font-display font-black mb-8 uppercase tracking-tighter leading-tight">Initialize <br /> Service</h3>
+                  <p className="text-white/40 font-serif mb-12 leading-relaxed text-lg italic">
+                    Secure your slot in the lab. Our team will contact you for a technical briefing prior to intake.
                   </p>
-                  <div className="space-y-4">
-                     <div className="flex gap-3 text-sm font-bold uppercase tracking-widest text-brand-accent">
-                        <CheckCircle size={16} /> Fast Turnaround
+                  <div className="space-y-6">
+                     <div className="flex gap-4 text-[10px] font-bold uppercase tracking-[0.2em] text-white/60">
+                        <CheckCircle size={16} className="text-brand-accent" /> 24h Turnaround Available
                      </div>
-                     <div className="flex gap-3 text-sm font-bold uppercase tracking-widest text-brand-accent">
-                        <CheckCircle size={16} /> Genuine Parts Only
+                     <div className="flex gap-4 text-[10px] font-bold uppercase tracking-[0.2em] text-white/60">
+                        <CheckCircle size={16} className="text-brand-accent" /> Genuine Technical Parts
                      </div>
                   </div>
                </div>
-               <div className="pt-12 border-t border-white/10">
-                  <p className="text-xs font-bold uppercase tracking-widest text-white/40 mb-2">Need advice first?</p>
-                  <p className="text-xl font-display">01629 812345</p>
+               <div className="pt-16 border-t border-white/5">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-white/30 mb-4 text-center">Technical Hotline</p>
+                  <p className="text-3xl font-display font-black text-center">01629 812345</p>
                </div>
             </div>
             
-            <div className="md:col-span-3 p-12">
-               <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                 <div className="flex flex-col gap-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-brand-text/40">Full Name</label>
-                    <input type="text" className="bg-brand-bg border border-transparent focus:border-brand-accent focus:bg-white p-4 text-sm focus:outline-none transition-all" />
+            <div className="lg:col-span-3 p-16 bg-black/20">
+               <form className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                 <div className="flex flex-col gap-3">
+                    <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">Client Name</label>
+                    <input type="text" className="bg-white/5 border border-white/5 focus:border-brand-accent p-5 text-sm focus:outline-none transition-all text-white placeholder:text-white/10" placeholder="e.g. Alex Harrison" />
                  </div>
-                 <div className="flex flex-col gap-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-brand-text/40">Email</label>
-                    <input type="email" className="bg-brand-bg border border-transparent focus:border-brand-accent focus:bg-white p-4 text-sm focus:outline-none transition-all" />
+                 <div className="flex flex-col gap-3">
+                    <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">Secure Email</label>
+                    <input type="email" className="bg-white/5 border border-white/5 focus:border-brand-accent p-5 text-sm focus:outline-none transition-all text-white placeholder:text-white/10" placeholder="e.g. alex@example.com" />
                  </div>
-                 <div className="flex flex-col gap-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-brand-text/40">Bike Make/Model</label>
-                    <input type="text" className="bg-brand-bg border border-transparent focus:border-brand-accent focus:bg-white p-4 text-sm focus:outline-none transition-all" />
+                 <div className="flex flex-col gap-3">
+                    <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">Rig Specification</label>
+                    <input type="text" className="bg-white/5 border border-white/5 focus:border-brand-accent p-5 text-sm focus:outline-none transition-all text-white placeholder:text-white/10" placeholder="e.g. Trek Slash 8" />
                  </div>
-                 <div className="flex flex-col gap-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-brand-text/40">Service Type</label>
-                    <select className="bg-brand-bg border border-transparent focus:border-brand-accent focus:bg-white p-4 text-sm focus:outline-none transition-all">
-                       <option>Bronze Service - £45</option>
-                       <option>Silver Service - £85</option>
-                       <option>Gold Service - £145</option>
-                       <option>Custom/Repair</option>
+                 <div className="flex flex-col gap-3">
+                    <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">Service Protocol</label>
+                    <select className="bg-white/5 border border-white/5 focus:border-brand-accent p-5 text-sm focus:outline-none transition-all text-white appearance-none">
+                       <option className="bg-brand-bg">Trail Tune - £55</option>
+                       <option className="bg-brand-bg">Enduro Overhaul - £95</option>
+                       <option className="bg-brand-bg">Championship Rebuild - £175</option>
+                       <option className="bg-brand-bg">Custom Lab / Repair</option>
                     </select>
                  </div>
-                 <div className="md:col-span-2 flex flex-col gap-2">
-                    <label className="text-[10px] font-bold uppercase tracking-widest text-brand-text/40">Notes / Issues</label>
-                    <textarea rows={4} className="bg-brand-bg border border-transparent focus:border-brand-accent focus:bg-white p-4 text-sm focus:outline-none transition-all resize-none"></textarea>
+                 <div className="md:col-span-2 flex flex-col gap-3">
+                    <label className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/30">Technical Notes</label>
+                    <textarea rows={5} className="bg-white/5 border border-white/5 focus:border-brand-accent p-5 text-sm focus:outline-none transition-all resize-none text-white placeholder:text-white/10" placeholder="Specify any mechanical issues or custom requirements..."></textarea>
                  </div>
-                 <div className="md:col-span-2 mt-4">
-                    <button type="submit" className="w-full btn-primary py-5 font-bold text-lg uppercase tracking-widest">
-                       Request Booking
+                 <div className="md:col-span-2 mt-6">
+                    <button type="submit" className="w-full bg-brand-accent text-white py-6 font-black text-xs uppercase tracking-[0.4em] hover:bg-white hover:text-brand-dark transition-all duration-500">
+                       Initialize Request
                     </button>
                  </div>
                </form>

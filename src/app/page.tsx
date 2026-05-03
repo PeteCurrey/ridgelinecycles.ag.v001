@@ -120,8 +120,8 @@ export default function Home() {
           >
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
             <img 
-              src="https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?auto=format&fit=crop&w=2000&q=80" 
-              alt="Bicycle Drivetrain Details" 
+              src="https://images.unsplash.com/photo-1511994298241-608e28f14fde?auto=format&fit=crop&w=2000&q=80" 
+              alt="MTB Engineering Detail" 
               className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-1000 group-hover:scale-105"
             />
             {/* Tech Callouts */}
@@ -181,8 +181,8 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-brand-bg/80 z-10" />
           <img 
-            src="https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?auto=format&fit=crop&q=80" 
-            alt="Bike Workshop" 
+            src="https://images.unsplash.com/photo-1565543730165-27a3d3c8736a?auto=format&fit=crop&q=80" 
+            alt="Suspension Service Lab" 
             className="w-full h-full object-cover grayscale opacity-20"
           />
         </div>
