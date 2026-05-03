@@ -35,3 +35,9 @@ body {
   background-color: var(--brand-bg);
   color: var(--brand-text);
 }
+
+@layer utilities {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-6 md:px-12 w-full;
+  }
+}

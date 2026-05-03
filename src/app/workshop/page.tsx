@@ -71,7 +71,7 @@ export default function WorkshopPage() {
             <h1 className="text-6xl md:text-[8rem] font-display font-black mb-10 leading-[0.85] uppercase tracking-tighter mix-blend-difference">
               Surgical <br /> Precision.
             </h1>
-            <p className="text-xl md:text-2xl font-serif text-white/60 leading-relaxed mb-14 max-w-2xl mx-auto italic">
+            <p className="text-xl md:text-2xl font-sans text-white/60 leading-relaxed mb-14 max-w-2xl mx-auto italic">
               "We don't just fix bikes. We optimize them for the most technical terrain in the UK."
             </p>
             <a href="#booking" className="bg-white text-brand-dark px-12 py-5 uppercase font-bold text-xs tracking-[0.3em] hover:bg-brand-accent hover:text-white transition-all duration-300">
@@ -97,7 +97,7 @@ export default function WorkshopPage() {
           <div className="text-center mb-24 flex flex-col items-center">
             <span className="text-brand-accent font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block text-center">Service Packages</span>
             <h2 className="text-5xl md:text-7xl font-display font-black mb-8 text-white uppercase tracking-tighter">Elite Maintenance</h2>
-            <p className="text-white/50 font-serif max-w-2xl mx-auto text-lg leading-relaxed">From pivot bearings to custom suspension tuning, our mechanics specialize in high-performance mountain bike calibration.</p>
+            <p className="text-white/50 font-sans max-w-2xl mx-auto text-lg leading-relaxed">From pivot bearings to custom suspension tuning, our mechanics specialize in high-performance mountain bike calibration.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -123,7 +123,7 @@ export default function WorkshopPage() {
                 <div className="text-4xl font-sans font-black mb-8 text-white">
                   {typeof pkg.price === 'number' ? `£${pkg.price}` : pkg.price}
                 </div>
-                <p className={cn("text-sm font-serif mb-12 leading-relaxed min-h-[60px]", pkg.popular ? "text-white/60" : "text-white/40")}>
+                <p className={cn("text-sm font-sans mb-12 leading-relaxed min-h-[60px]", pkg.popular ? "text-white/60" : "text-white/40")}>
                   {pkg.desc}
                 </p>
                 <ul className="space-y-4 mb-16 flex-grow w-full">
@@ -166,7 +166,7 @@ export default function WorkshopPage() {
                     {s.icon}
                   </div>
                   <h4 className="text-2xl font-display font-black mb-4 uppercase tracking-tight text-white">{s.title}</h4>
-                  <p className="text-white/40 font-serif leading-relaxed text-sm max-w-[250px]">{s.desc}</p>
+                  <p className="text-white/40 font-sans leading-relaxed text-sm max-w-[250px]">{s.desc}</p>
                 </div>
               ))}
            </div>
@@ -181,7 +181,7 @@ export default function WorkshopPage() {
                <div>
                   <span className="text-brand-accent font-bold uppercase tracking-[0.3em] text-[10px] mb-8 block">Booking Interface</span>
                   <h3 className="text-5xl font-display font-black mb-8 uppercase tracking-tighter leading-tight">Initialize <br /> Service</h3>
-                  <p className="text-white/40 font-serif mb-12 leading-relaxed text-lg italic">
+                  <p className="text-white/40 font-sans mb-12 leading-relaxed text-lg italic">
                     Secure your slot in the lab. Our team will contact you for a technical briefing prior to intake.
                   </p>
                   <div className="space-y-6">

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, DM_Sans, Lora } from "next/font/google";
+import { Bebas_Neue, Inter } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
 import NextAuthProvider from "@/components/providers/NextAuthProvider";
@@ -9,19 +9,15 @@ import CartDrawer from "@/components/cart/CartDrawer";
 import { Toaster } from "sonner";
 import { cn } from "@/lib/utils";
 
-const playfair = Playfair_Display({
+const bebasNeue = Bebas_Neue({
+  weight: "400",
   subsets: ["latin"],
-  variable: "--font-playfair",
+  variable: "--font-bebas-neue",
 });
 
-const dmSans = DM_Sans({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-dm-sans",
-});
-
-const lora = Lora({
-  subsets: ["latin"],
-  variable: "--font-lora",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -37,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={cn("h-full antialiased")}>
-      <body className={`${playfair.variable} ${dmSans.variable} ${lora.variable} font-sans bg-brand-bg text-brand-text min-h-full flex flex-col`}>
+      <body className={`${bebasNeue.variable} ${inter.variable} font-sans bg-brand-bg text-brand-text min-h-full flex flex-col`}>
         <NextAuthProvider>
           <CartProvider>
             <Navbar />

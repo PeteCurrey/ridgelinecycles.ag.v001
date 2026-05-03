@@ -20,9 +20,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        display: ["var(--font-playfair)", "serif"],
-        sans: ["var(--font-dm-sans)", "sans-serif"],
-        serif: ["var(--font-lora)", "serif"],
+        display: ["var(--font-bebas-neue)", "sans-serif"],
+        sans: ["var(--font-inter)", "sans-serif"],
       },
     },
   },

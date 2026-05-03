@@ -43,19 +43,21 @@ export default function Home() {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col items-center"
           >
-            <span className="text-brand-accent font-sans font-bold uppercase tracking-[0.4em] text-[10px] sm:text-xs mb-8 block text-center">
+            <span className="text-brand-accent font-sans font-bold uppercase tracking-[0.4em] text-xs mb-6 block text-center">
               Engineered for the Peak District
             </span>
-            <h1 className="text-6xl sm:text-8xl md:text-[9rem] font-display font-black leading-[0.85] tracking-tighter uppercase text-white mb-8 mix-blend-difference text-center">
-              Dominate <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/40">The Dirt.</span>
+            <h1 className="text-[5rem] sm:text-[8rem] md:text-[12rem] font-display font-bold leading-[0.8] tracking-tighter uppercase text-white mb-8 text-center drop-shadow-2xl">
+              Dominate <br /> <span className="text-transparent bg-clip-text bg-gradient-to-br from-white to-white/30">The Dirt</span>
             </h1>
-            <p className="max-w-xl mx-auto text-sm sm:text-base font-sans tracking-wide text-white/70 mb-12 leading-relaxed text-center">
+            <p className="max-w-xl mx-auto text-base font-sans tracking-wide text-white/70 mb-12 leading-relaxed text-center">
               Precision engineering meets raw power. Explore the ultimate collection of high-performance mountain bikes.
             </p>
             <div className="flex items-center justify-center gap-6">
-              <Link href="/shop" className="group flex items-center justify-center gap-4 bg-white text-brand-dark px-8 py-4 uppercase font-bold text-[10px] tracking-[0.2em] hover:bg-brand-accent hover:text-white transition-colors duration-300">
-                Explore Collection
-                <MoveRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              <Link href="/shop" className="group relative flex items-center justify-center gap-4 bg-brand-accent text-white px-10 py-5 uppercase font-bold text-sm tracking-[0.2em] transition-transform hover:scale-105 skew-x-[-10deg]">
+                <span className="skew-x-[10deg] flex items-center gap-4">
+                  Explore Collection
+                  <MoveRight size={18} className="group-hover:translate-x-2 transition-transform" />
+                </span>
               </Link>
             </div>
           </motion.div>
@@ -89,8 +91,8 @@ export default function Home() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex flex-col items-center text-center max-w-3xl mb-16"
           >
-            <span className="text-brand-accent font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block">01 // The Technology</span>
-            <h2 className="text-4xl md:text-6xl font-display font-black uppercase tracking-tighter leading-tight mb-8 text-white">
+            <span className="text-brand-accent font-bold uppercase tracking-[0.3em] text-xs mb-6 block">01 // The Technology</span>
+            <h2 className="text-5xl md:text-[5rem] font-display font-bold uppercase tracking-tighter leading-[0.85] mb-8 text-white">
               Zero Compromise. <br /> Maximum Velocity.
             </h2>
             <p className="text-brand-muted text-sm leading-relaxed mb-10 max-w-lg font-sans">
@@ -149,8 +151,8 @@ export default function Home() {
       <section className="py-32 bg-brand-bg relative overflow-hidden">
         <div className="container-custom mb-16 flex flex-col items-center text-center gap-6">
           <div className="flex flex-col items-center">
-            <span className="text-brand-accent font-bold uppercase tracking-[0.3em] text-[10px] mb-4 block">02 // The Fleet</span>
-            <h2 className="text-4xl md:text-5xl font-display font-black uppercase tracking-tighter text-white">
+            <span className="text-brand-accent font-bold uppercase tracking-[0.3em] text-xs mb-4 block">02 // The Fleet</span>
+            <h2 className="text-5xl md:text-[5rem] font-display font-bold uppercase tracking-tighter text-white">
               Latest Arrivals
             </h2>
           </div>
@@ -195,8 +197,8 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl mx-auto text-center flex flex-col items-center"
           >
-            <span className="text-brand-accent font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block">03 // Service Lab</span>
-            <h2 className="text-5xl md:text-7xl font-display font-black uppercase tracking-tighter mb-8 text-white">
+            <span className="text-brand-accent font-bold uppercase tracking-[0.3em] text-xs mb-6 block">03 // Service Lab</span>
+            <h2 className="text-6xl md:text-[6rem] font-display font-bold uppercase tracking-tighter mb-8 text-white leading-[0.85]">
               Surgical Precision.
             </h2>
             <p className="text-brand-muted text-sm md:text-base leading-relaxed mb-12 font-sans max-w-2xl mx-auto">

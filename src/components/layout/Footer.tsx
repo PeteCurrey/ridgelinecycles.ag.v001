@@ -14,7 +14,7 @@ export default function Footer() {
                 RIDGELINE<span className="text-brand-accent">CYCLES</span>
               </span>
             </Link>
-            <p className="text-white/60 mb-6 font-serif leading-relaxed">
+            <p className="text-white/60 mb-6 font-sans leading-relaxed">
               Family-run since 2009. We live and breathe Peak District technical trails. Professional suspension lab, elite mountain bikes, and expert local trail knowledge.
             </p>
             <div className="flex gap-4">
@@ -69,7 +69,7 @@ export default function Footer() {
           {/* Newsletter */}
           <div>
             <h4 className="text-lg font-display font-bold mb-6 uppercase tracking-widest text-brand-accent">Newsletter</h4>
-            <p className="text-white/60 mb-6 text-sm font-serif">Join our community for ride guides, workshop tips, and new bike arrivals.</p>
+            <p className="text-white/60 mb-6 text-sm font-sans">Join our community for ride guides, workshop tips, and new bike arrivals.</p>
             <form className="flex flex-col gap-3">
               <input 
                 type="email" 

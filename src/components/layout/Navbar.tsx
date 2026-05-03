@@ -60,12 +60,9 @@ export default function Navbar() {
           </button>
 
           {/* Logo */}
-          <Link href="/" className="flex flex-col items-center group">
-            <span className="text-xl md:text-3xl font-display font-black tracking-tighter text-white uppercase">
+          <Link href="/" className="flex flex-col items-center group skew-x-[-5deg]">
+            <span className="text-3xl md:text-5xl font-display font-bold tracking-tighter text-white uppercase leading-none">
               RIDGELINE<span className="text-brand-accent">.</span>
-            </span>
-            <span className="text-[9px] uppercase tracking-[0.3em] font-sans text-brand-muted group-hover:text-white transition-colors">
-              Mountain Performance
             </span>
           </Link>
 
