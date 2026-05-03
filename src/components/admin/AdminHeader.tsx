@@ -42,14 +42,14 @@ export default function AdminHeader() {
         </button>
 
         <DropdownMenu>
-          <DropdownMenuTrigger asChild>
+          <DropdownMenuTrigger render={
             <Button variant="ghost" className="flex items-center gap-2 p-1 hover:bg-gray-100 rounded-full pr-3">
               <div className="w-8 h-8 bg-brand-dark rounded-full flex items-center justify-center text-white text-xs font-bold">
                 AU
               </div>
               <span className="text-xs font-bold text-gray-700 hidden sm:inline">Admin User</span>
             </Button>
-          </DropdownMenuTrigger>
+          } />
           <DropdownMenuContent align="end" className="w-56">
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
             <DropdownMenuSeparator />

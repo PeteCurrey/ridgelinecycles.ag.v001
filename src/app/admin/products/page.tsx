@@ -63,11 +63,9 @@ export default function AdminProductsPage() {
           </div>
 
           <Sheet>
-            <SheetTrigger asChild>
-              <Button className="btn-primary bg-brand-accent hover:bg-opacity-90 flex items-center gap-2">
-                <Plus size={18} />
-                Add Product
-              </Button>
+            <SheetTrigger render={<Button className="btn-primary bg-brand-accent hover:bg-opacity-90 flex items-center gap-2" />}>
+              <Plus size={18} />
+              Add Product
             </SheetTrigger>
             <SheetContent className="w-[400px] sm:w-[540px] overflow-y-auto">
               <SheetHeader className="mb-8">
@@ -203,11 +201,11 @@ export default function AdminProductsPage() {
                     </TableCell>
                     <TableCell className="px-6 py-4 text-right">
                       <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
+                        <DropdownMenuTrigger render={
                           <Button variant="ghost" size="sm" className="h-8 w-8 p-0">
                             <MoreHorizontal size={16} />
                           </Button>
-                        </DropdownMenuTrigger>
+                        } />
                         <DropdownMenuContent align="end">
                           <DropdownMenuItem className="flex items-center gap-2 text-xs">
                             <Edit2 size={12} /> Edit Product

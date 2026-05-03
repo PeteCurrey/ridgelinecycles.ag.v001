@@ -26,6 +26,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Badge } from "@/components/ui/badge";
 import { orders } from "@/lib/orders";
 import { jobs } from "@/lib/jobs";
+import { cn } from "@/lib/utils";
 
 const revenueData = [
   { name: "01 May", revenue: 1200 },

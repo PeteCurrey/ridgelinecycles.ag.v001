@@ -14,6 +14,7 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   const { addToCart } = useCart();
+  const totalStock = Object.values(product.stock).reduce((a, b) => a + b, 0);
 
   return (
     <div className="group flex flex-col bg-white overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-500">
@@ -42,9 +43,9 @@ export default function ProductCard({ product }: ProductCardProps) {
               Sale
             </span>
           )}
-          {product.stock <= 2 && product.stock > 0 && (
+          {totalStock <= 2 && totalStock > 0 && (
             <span className="bg-amber-500 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest">
-              Last {product.stock} left
+              Last {totalStock} left
             </span>
           )}
         </div>

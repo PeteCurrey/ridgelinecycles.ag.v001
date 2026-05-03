@@ -43,6 +43,8 @@ export default function ProductDetailPage() {
     .filter((p) => p.category === product.category && p.id !== product.id)
     .slice(0, 4);
 
+  const totalStock = Object.values(product.stock).reduce((a, b) => a + b, 0);
+
   return (
     <div className="bg-white">
       {/* Breadcrumbs */}
@@ -171,14 +173,13 @@ export default function ProductDetailPage() {
                   </div>
                 </div>
 
-                {/* Stock Status */}
                 <div className="flex items-center gap-3">
                   <div className={cn(
                     "w-3 h-3 rounded-full",
-                    product.stock > 5 ? "bg-green-500" : product.stock > 0 ? "bg-amber-500" : "bg-red-500"
+                    totalStock > 5 ? "bg-green-500" : totalStock > 0 ? "bg-amber-500" : "bg-red-500"
                   )} />
                   <span className="text-sm font-bold uppercase tracking-widest">
-                    {product.stock > 5 ? "In Stock" : product.stock > 0 ? `Low Stock: ${product.stock} left` : "Out of Stock"}
+                    {totalStock > 5 ? "In Stock" : totalStock > 0 ? `Low Stock: ${totalStock} left` : "Out of Stock"}
                   </span>
                   <span className="text-xs text-brand-text/40 font-serif">— Ready for collection or delivery</span>
                 </div>
