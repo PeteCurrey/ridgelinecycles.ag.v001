@@ -67,7 +67,7 @@ export default function AboutPage() {
             </div>
             <div className="relative aspect-[4/3] rounded-sm overflow-hidden shadow-xl border border-brand-border">
               <img 
-                src="https://images.unsplash.com/photo-1544191696-102dbb1eaca5?auto=format&fit=crop&q=80" 
+                src="/images/homepage/cat-enduro.png" 
                 alt="Our Workshop" 
                 className="w-full h-full object-cover"
               />

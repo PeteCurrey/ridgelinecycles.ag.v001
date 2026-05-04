@@ -75,7 +75,7 @@ export default function WorkshopPage() {
             className="relative aspect-video rounded-sm overflow-hidden shadow-2xl border border-brand-border"
           >
             <img 
-              src="https://images.unsplash.com/photo-1544191696-102dbb1eaca5?auto=format&fit=crop&q=80" 
+              src="/images/homepage/cat-trail.png" 
               alt="MTB Workshop" 
               className="w-full h-full object-cover"
             />
@@ -151,7 +151,7 @@ export default function WorkshopPage() {
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1565543730165-27a3d3c8736a?auto=format&fit=crop&q=80" 
+            src="/images/homepage/hero.png" 
             alt="Technical MTB Lab" 
             className="w-full h-full object-cover"
           />

@@ -11,10 +11,10 @@ export default function Home() {
   const featuredBikes = products.filter(p => p.isFeatured).slice(0, 4);
   
   const categories = [
-    { name: "Trail", image: "https://images.unsplash.com/photo-1544191696-102dbb1eaca5?auto=format&fit=crop&q=80", href: "/shop?category=Trail" },
-    { name: "Enduro", image: "https://images.unsplash.com/photo-1565543730165-27a3d3c8736a?auto=format&fit=crop&q=80", href: "/shop?category=Enduro" },
-    { name: "Downhill", image: "https://images.unsplash.com/photo-1571333148656-787622839257?auto=format&fit=crop&q=80", href: "/shop?category=Downhill" },
-    { name: "E-MTB", image: "https://images.unsplash.com/photo-1576435728678-68ce0f6eb293?auto=format&fit=crop&q=80", href: "/shop?category=E-MTB" },
+    { name: "Trail", image: "/images/homepage/cat-trail.png", href: "/shop?category=Trail" },
+    { name: "Enduro", image: "/images/homepage/cat-enduro.png", href: "/shop?category=Enduro" },
+    { name: "Downhill", image: "/images/homepage/cat-downhill.png", href: "/shop?category=Downhill" },
+    { name: "E-MTB", image: "/images/homepage/cat-emtb.png", href: "/shop?category=E-MTB" },
   ];
 
   return (
@@ -24,7 +24,7 @@ export default function Home() {
       <section className="relative h-[85vh] w-full overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1558284594-8ceb1a1c9ee0?auto=format&fit=crop&w=2000&q=80" 
+            src="/images/homepage/hero.png" 
             alt="High Performance Mountain Bike" 
             className="w-full h-full object-cover"
           />
@@ -151,7 +151,7 @@ export default function Home() {
       <section className="relative py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1565543730165-27a3d3c8736a?auto=format&fit=crop&q=80" 
+            src="/images/homepage/hero.png" 
             alt="MTB Workshop" 
             className="w-full h-full object-cover"
           />
