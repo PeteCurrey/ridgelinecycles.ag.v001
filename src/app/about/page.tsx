@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { MapPin, Users, Heart, Coffee } from "lucide-react";
+import { MapPin, Users, Heart, Coffee, ShieldCheck, Award } from "lucide-react";
 
 const team = [
   { name: "Dave Harrison", role: "Founder & Master Mechanic", bio: "Riding the Peak since 1992. Specialized in custom wheel builds and vintage restorations.", image: "👨‍🔧" },
@@ -20,129 +20,130 @@ const timeline = [
 
 export default function AboutPage() {
   return (
-    <div className="bg-brand-bg text-brand-text">
-      {/* Hero */}
-      <section className="bg-brand-bg py-32 md:py-48 flex flex-col items-center text-center">
-        <div className="container-custom">
+    <div className="bg-white min-h-screen pt-20">
+      
+      {/* Editorial Hero */}
+      <section className="relative py-24 md:py-32 bg-brand-bg-alt overflow-hidden border-b border-brand-border">
+        <div className="container-custom relative z-10 flex flex-col items-center text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex flex-col items-center"
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl"
           >
-            <span className="text-brand-accent font-bold uppercase tracking-[0.5em] text-[10px] mb-8 block">04 // OUR PROTOCOL</span>
-            <h1 className="text-6xl md:text-[8rem] font-display font-black text-white mb-12 leading-[0.8] uppercase tracking-tighter skew-x-[-5deg]">
-              Peak Performance. <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent to-brand-accent/50">Local Knowledge.</span>
+            <span className="text-brand-accent font-bold uppercase tracking-[0.3em] text-xs mb-6 block">Our Story</span>
+            <h1 className="text-5xl md:text-7xl font-display font-bold text-brand-dark uppercase tracking-tight leading-[0.9] mb-8">
+              Peak Performance. <br /> Local Knowledge.
             </h1>
-            <p className="text-xl md:text-2xl font-sans text-white/60 leading-relaxed italic max-w-3xl mx-auto">
-              "We didn't start Ridgeline to sell bikes. We started it to engineer a community of riders who live for the technical grit of the Peak District."
+            <p className="text-lg md:text-xl text-brand-text-muted leading-relaxed max-w-3xl mx-auto">
+              Ridgeline Cycles is an independent mountain bike specialist based in the heart of Bakewell. We are dedicated to providing the highest level of technical expertise and premium equipment for riders who demand more from their rig.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Story Content */}
-      <section className="py-24 border-y border-white/5 bg-[#0a0a0a]">
+      {/* History Section */}
+      <section className="section-pad bg-white">
         <div className="container-custom">
-          <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-            <h2 className="text-5xl md:text-7xl font-display font-black mb-12 text-white uppercase tracking-tighter skew-x-[-2deg]">Engineered since 2009.</h2>
-            <div className="space-y-8 text-white/50 font-sans text-lg md:text-xl leading-relaxed">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-6 text-brand-text-muted text-lg leading-relaxed">
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-dark uppercase tracking-tight mb-8">Engineering since 2009.</h2>
               <p>
-                Based in the heart of Bakewell, Ridgeline Cycles was born from a simple observation: the Peak District is one of the best places in the world to ride a mountain bike, but it's exceptionally tough on equipment.
+                Founded in 2009 by Dave Harrison, Ridgeline Cycles was born from a passion for the technical trails of the Peak District. We understood early on that this region demands more from a mountain bike than almost anywhere else in the UK.
               </p>
               <p>
-                Dave Harrison started the lab in 2009 with a focus on durability and raw performance. He wanted to calibrate bikes that didn't just look good on paper, but could handle the limestone mud and gritstone technical descents that our region is famous for.
+                Our mission has always been simple: to provide riders with the equipment and technical support they need to dominate the technical gritstone descents and limestone mud of our home trails.
               </p>
-              <p>
-                Today, we're still family-run and still obsessed with the technical details. We've grown from a single-stand repair shop to a premier technical dealer for some of the world's most aggressive mountain bike brands, but our mission remains the same: to help you dominate the dirt.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-2 gap-12 mt-16 pt-16 border-t border-gray-100 w-full justify-center">
-               <div className="flex flex-col items-center gap-2">
-                  <span className="text-5xl md:text-6xl font-display font-black text-white skew-x-[-5deg]">15+</span>
-                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/50">Years in Bakewell</span>
-               </div>
-               <div className="flex flex-col items-center gap-2">
-                  <span className="text-5xl md:text-6xl font-display font-black text-white skew-x-[-5deg]">25k+</span>
-                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/50">Rigs Calibrated</span>
-               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline */}
-      <section className="py-32 bg-black text-white text-center">
-        <div className="container-custom">
-          <h2 className="text-6xl md:text-[8rem] font-display font-black mb-24 uppercase tracking-tighter leading-[0.8]">Our <br/> Protocol</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
-            {timeline.map((item, i) => (
-              <div key={i} className="relative pt-10 border-t border-white/5 hover:border-brand-accent transition-colors duration-500 group flex flex-col items-center">
-                <span className="text-6xl font-display font-black text-white/10 mb-6 block group-hover:text-brand-accent transition-colors skew-x-[-5deg]">
-                  {item.year}
-                </span>
-                <h4 className="text-2xl font-display font-black mb-4 uppercase tracking-tight">{item.title}</h4>
-                <p className="text-white/40 font-sans text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="py-32 bg-[#0a0a0a] text-white text-center">
-        <div className="container-custom">
-          <div className="flex flex-col items-center mb-24">
-            <span className="text-brand-accent font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block">05 // THE TECHNICIANS</span>
-            <h2 className="text-6xl md:text-[8rem] font-display font-black mb-6 uppercase tracking-tighter text-white skew-x-[-5deg]">The Lab <br/> Crew</h2>
-            <p className="text-white/40 font-sans text-xl max-w-2xl mx-auto italic">Real engineers who calibrate the rigs they sell. Meet the technicians behind Ridgeline.</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            {team.map((member, i) => (
-              <div key={i} className="group flex flex-col items-center bg-black border border-white/5 p-8 transition-all hover:border-brand-accent/50">
-                <div className="aspect-square w-full bg-white/5 mb-8 relative flex items-center justify-center text-7xl skew-x-[-2deg]">
-                   {member.image}
-                   <div className="absolute inset-0 bg-brand-accent/10 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="pt-6 grid grid-cols-2 gap-8">
+                <div>
+                  <span className="text-4xl font-display font-bold text-brand-accent">15+</span>
+                  <p className="text-xs font-bold uppercase tracking-widest text-brand-dark">Years in Bakewell</p>
                 </div>
-                <h3 className="text-3xl font-display font-black mb-2 uppercase tracking-tight text-white">{member.name}</h3>
-                <p className="text-brand-accent text-[9px] font-bold uppercase tracking-[0.4em] mb-6">{member.role}</p>
-                <p className="text-white/40 font-sans text-sm leading-relaxed max-w-[280px]">{member.bio}</p>
+                <div>
+                  <span className="text-4xl font-display font-bold text-brand-accent">25k+</span>
+                  <p className="text-xs font-bold uppercase tracking-widest text-brand-dark">Bikes Serviced</p>
+                </div>
+              </div>
+            </div>
+            <div className="relative aspect-[4/3] rounded-sm overflow-hidden shadow-xl border border-brand-border">
+              <img 
+                src="https://images.unsplash.com/photo-1544191696-102dbb1eaca5?auto=format&fit=crop&q=80" 
+                alt="Our Workshop" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="section-pad bg-brand-bg-alt border-y border-brand-border">
+        <div className="container-custom">
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-brand-dark uppercase tracking-tight mb-6">The Lab Crew</h2>
+            <p className="text-brand-text-muted text-lg">Meet the technical experts behind Ridgeline Cycles.</p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {team.map((member, i) => (
+              <div key={i} className="bg-white border border-brand-border p-8 rounded-sm shadow-sm flex flex-col items-center text-center">
+                <div className="w-24 h-24 bg-brand-bg-alt rounded-full flex items-center justify-center text-5xl mb-6 shadow-inner border border-brand-border">
+                  {member.image}
+                </div>
+                <h3 className="text-xl font-bold text-brand-dark mb-1">{member.name}</h3>
+                <p className="text-brand-accent text-xs font-bold uppercase tracking-widest mb-4">{member.role}</p>
+                <p className="text-sm text-brand-text-muted leading-relaxed">{member.bio}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Community / USP Grid */}
-      <section className="py-32 bg-black border-t border-white/5">
+      {/* Timeline Section */}
+      <section className="section-pad bg-white">
+        <div className="container-custom">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-brand-dark uppercase tracking-tight mb-16 text-center">Our Journey</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            {timeline.map((item, i) => (
+              <div key={i} className="relative pl-6 border-l-2 border-brand-accent">
+                <span className="text-2xl font-display font-bold text-brand-accent mb-2 block">{item.year}</span>
+                <h4 className="text-lg font-bold text-brand-dark mb-2 uppercase">{item.title}</h4>
+                <p className="text-sm text-brand-text-muted leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Community Grid */}
+      <section className="section-pad bg-brand-dark text-white">
         <div className="container-custom">
            <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
-              <div className="flex flex-col items-center text-center gap-8 group">
-                 <div className="w-24 h-24 bg-white/5 flex items-center justify-center text-white border border-white/10 group-hover:border-brand-accent group-hover:text-brand-accent transition-all skew-x-[-10deg]">
-                    <Users size={36} className="skew-x-[10deg]" />
+              <div className="flex flex-col items-center text-center gap-6">
+                 <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center text-brand-accent border border-white/20">
+                    <Users size={28} />
                  </div>
-                 <h3 className="text-3xl font-display font-black uppercase tracking-tight text-white">MTB Ride Groups</h3>
-                 <p className="text-white/40 font-sans leading-relaxed">We lead weekly mountain bike and E-MTB trail sessions departing from the shop every Sunday at 9am. All skill levels welcome.</p>
+                 <h3 className="text-xl font-display font-bold uppercase tracking-tight">MTB Ride Groups</h3>
+                 <p className="text-white/60 text-sm leading-relaxed">Weekly mountain bike and E-MTB trail sessions departing from the shop every Sunday at 9am. Join our community.</p>
               </div>
-              <div className="flex flex-col items-center text-center gap-8 group">
-                 <div className="w-24 h-24 bg-white/5 flex items-center justify-center text-white border border-white/10 group-hover:border-brand-accent group-hover:text-brand-accent transition-all skew-x-[-10deg]">
-                    <Heart size={36} className="skew-x-[10deg]" />
+              <div className="flex flex-col items-center text-center gap-6">
+                 <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center text-brand-accent border border-white/20">
+                    <ShieldCheck size={28} />
                  </div>
-                 <h3 className="text-3xl font-display font-black uppercase tracking-tight text-white">Trail Advocacy</h3>
-                 <p className="text-white/40 font-sans leading-relaxed">Proud supporters of the Peak District National Park Foundation and local trail maintenance advocacy groups.</p>
+                 <h3 className="text-xl font-display font-bold uppercase tracking-tight">Trail Advocacy</h3>
+                 <p className="text-white/60 text-sm leading-relaxed">Proud supporters of the Peak District National Park Foundation and local trail maintenance advocacy groups.</p>
               </div>
-              <div className="flex flex-col items-center text-center gap-8 group">
-                 <div className="w-24 h-24 bg-white/5 flex items-center justify-center text-white border border-white/10 group-hover:border-brand-accent group-hover:text-brand-accent transition-all skew-x-[-10deg]">
-                    <Coffee size={36} className="skew-x-[10deg]" />
+              <div className="flex flex-col items-center text-center gap-6">
+                 <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center text-brand-accent border border-white/20">
+                    <Coffee size={28} />
                  </div>
-                 <h3 className="text-3xl font-display font-black uppercase tracking-tight text-white">The Basecamp</h3>
-                 <p className="text-white/40 font-sans leading-relaxed">Our shop is a hub for riders. Drop in for an espresso and calibrate your next technical upgrade or local trail route.</p>
+                 <h3 className="text-xl font-display font-bold uppercase tracking-tight">The Basecamp</h3>
+                 <p className="text-white/60 text-sm leading-relaxed">Our shop is more than just a store. It's a hub for local riders to meet, share routes, and enjoy a professional espresso.</p>
               </div>
            </div>
         </div>
       </section>
+
     </div>
   );
 }

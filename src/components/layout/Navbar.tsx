@@ -41,33 +41,40 @@ export default function Navbar() {
 
   return (
     <>
+      {/* Giant-style Promo Bar */}
+      <div className="promo-bar fixed top-0 left-0 right-0 z-[60]">
+        <div className="container-custom">
+          Free Click & Collect on all orders over £50 | 0% Finance Available
+        </div>
+      </div>
+
       <nav
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+          "fixed top-8 left-0 right-0 z-50 transition-all duration-300",
           isScrolled || activeMegaMenu || isMobileMenuOpen
-            ? "bg-brand-bg/80 backdrop-blur-xl border-b border-white/10 py-4"
-            : "bg-transparent py-6 border-transparent"
+            ? "bg-white shadow-sm border-b border-brand-border py-3"
+            : "bg-white/90 backdrop-blur-md py-4"
         )}
         onMouseLeave={() => setActiveMegaMenu(null)}
       >
-        <div className="container-custom flex items-center justify-between relative z-20">
+        <div className="container-custom flex items-center justify-between relative">
           {/* Mobile Menu Toggle */}
           <button 
-            className="md:hidden p-2 text-white"
+            className="md:hidden p-2 text-brand-dark"
             onClick={() => setIsMobileMenuOpen(true)}
           >
             <Menu size={24} />
           </button>
 
-          {/* Logo */}
-          <Link href="/" className="flex flex-col items-center group skew-x-[-5deg]">
-            <span className="text-3xl md:text-5xl font-display font-bold tracking-tighter text-white uppercase leading-none">
-              RIDGELINE<span className="text-brand-accent">.</span>
+          {/* Logo - Left Aligned */}
+          <Link href="/" className="flex items-center gap-2">
+            <span className="text-2xl md:text-3xl font-display font-bold tracking-tight text-brand-dark uppercase">
+              RIDGELINE<span className="text-brand-accent">CYCLES</span>
             </span>
           </Link>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-10">
+          {/* Desktop Nav - Centered */}
+          <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
             {navLinks.map((link) => (
               <div 
                 key={link.name}
@@ -77,8 +84,8 @@ export default function Navbar() {
                 <Link
                   href={link.href}
                   className={cn(
-                    "text-xs font-bold tracking-[0.2em] uppercase transition-colors relative py-4",
-                    pathname === link.href || activeMegaMenu === link.name ? "text-brand-accent" : "text-white hover:text-white/80"
+                    "text-[13px] font-semibold tracking-wide transition-colors py-4 px-2 block",
+                    pathname === link.href || activeMegaMenu === link.name ? "text-brand-accent" : "text-brand-dark hover:text-brand-accent"
                   )}
                 >
                   {link.name}
@@ -87,33 +94,32 @@ export default function Navbar() {
                 {(pathname === link.href || activeMegaMenu === link.name) && (
                   <motion.div 
                     layoutId="navbar-indicator"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-brand-accent"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-accent"
                   />
                 )}
               </div>
             ))}
           </div>
 
-          {/* Icons */}
-          <div className="flex items-center gap-6">
+          {/* Icons - Right Aligned */}
+          <div className="flex items-center gap-5">
             {session && (
               <Link 
                 href="/admin/dashboard" 
-                className="hidden lg:flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-white/50 hover:text-brand-accent transition-all"
+                className="hidden lg:flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-brand-text-muted hover:text-brand-accent transition-all"
               >
-                <ShieldCheck size={16} />
+                <ShieldCheck size={14} />
                 Admin
               </Link>
             )}
             <button 
-              className="relative text-white hover:text-brand-accent transition-colors flex items-center gap-2 group"
+              className="relative text-brand-dark hover:text-brand-accent transition-colors flex items-center gap-2 group"
               onClick={() => setIsCartOpen(true)}
             >
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] hidden md:block opacity-0 group-hover:opacity-100 transition-opacity translate-x-2 group-hover:translate-x-0">Cart</span>
               <div className="relative">
-                <ShoppingBag size={20} strokeWidth={1.5} />
+                <ShoppingBag size={22} strokeWidth={1.5} />
                 {cartCount > 0 && (
-                  <span className="absolute -top-1.5 -right-1.5 bg-brand-accent text-white text-[9px] font-bold w-4 h-4 flex items-center justify-center rounded-full shadow-lg shadow-brand-accent/50">
+                  <span className="absolute -top-1 -right-1 bg-brand-accent text-white text-[9px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
                     {cartCount}
                   </span>
                 )}
@@ -122,52 +128,55 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mega Menu Overlay */}
+        {/* Mega Menu Overlay - Clean White */}
         <AnimatePresence>
           {activeMegaMenu === "Shop" && (
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-              className="absolute top-full left-0 right-0 bg-brand-bg/95 backdrop-blur-2xl border-b border-white/5 overflow-hidden z-10"
+              exit={{ opacity: 0, y: 10 }}
+              transition={{ duration: 0.2 }}
+              className="absolute top-full left-0 right-0 bg-white border-t border-brand-border shadow-xl overflow-hidden z-10"
               onMouseEnter={() => setActiveMegaMenu("Shop")}
               onMouseLeave={() => setActiveMegaMenu(null)}
             >
-              <div className="container-custom py-12">
-                <div className="flex flex-col items-center justify-center mb-8 gap-4">
-                  <h3 className="text-3xl font-display font-black text-white uppercase tracking-tighter">Collections</h3>
-                  <Link href="/shop" className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-accent hover:text-white transition-colors flex items-center gap-1">
-                    View All Bikes <ChevronRight size={12} />
-                  </Link>
-                </div>
-                <div className="grid grid-cols-4 gap-6">
-                  {categories.map((cat, i) => (
-                    <motion.div 
-                      key={cat.name}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: i * 0.1, duration: 0.4 }}
-                    >
+              <div className="container-custom py-10 flex gap-12">
+                <div className="w-1/3">
+                  <h3 className="text-xs font-bold text-brand-accent uppercase tracking-widest mb-6">Mountain Bikes</h3>
+                  <div className="grid grid-cols-1 gap-4">
+                    {categories.map((cat) => (
                       <Link 
+                        key={cat.name}
                         href={cat.href}
-                        className="group block relative aspect-[4/3] overflow-hidden rounded-sm"
+                        className="group flex items-center justify-between text-base font-medium text-brand-dark hover:text-brand-accent transition-colors"
                         onClick={() => setActiveMegaMenu(null)}
                       >
-                        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors z-10 duration-500" />
-                        <img 
-                          src={cat.image} 
-                          alt={cat.name} 
-                          className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-700 ease-out"
-                        />
-                        <div className="absolute bottom-6 left-6 z-20">
-                          <span className="text-white text-xl font-display font-bold uppercase tracking-wide group-hover:text-brand-accent transition-colors flex items-center gap-2">
-                            {cat.name}
-                            <ChevronRight size={16} className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                          </span>
-                        </div>
+                        {cat.name}
+                        <ChevronRight size={14} className="opacity-0 group-hover:opacity-100 transition-all" />
                       </Link>
-                    </motion.div>
+                    ))}
+                  </div>
+                </div>
+                <div className="w-2/3 grid grid-cols-2 gap-6">
+                  {categories.slice(0, 2).map((cat) => (
+                    <Link 
+                      key={cat.name}
+                      href={cat.href}
+                      className="group relative aspect-[16/9] overflow-hidden rounded-sm"
+                      onClick={() => setActiveMegaMenu(null)}
+                    >
+                      <img 
+                        src={cat.image} 
+                        alt={cat.name} 
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="tile-overlay" />
+                      <div className="absolute bottom-4 left-4 z-20">
+                        <span className="text-white text-lg font-display font-bold uppercase tracking-tight">
+                          Explore {cat.name}
+                        </span>
+                      </div>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -180,46 +189,32 @@ export default function Navbar() {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-brand-bg z-[60] flex flex-col p-6 text-white md:hidden"
+            initial={{ x: "-100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "-100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="fixed inset-0 bg-white z-[100] flex flex-col md:hidden"
           >
-            <div className="flex justify-between items-center mb-16">
-              <span className="text-2xl font-display font-black tracking-tighter uppercase">
-                  RIDGELINE<span className="text-brand-accent">.</span>
+            <div className="flex justify-between items-center p-6 border-b border-brand-border">
+              <span className="text-xl font-display font-bold uppercase tracking-tight">
+                  RIDGELINE<span className="text-brand-accent">CYCLES</span>
               </span>
-              <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 bg-white/5 rounded-full">
-                <X size={20} />
+              <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 text-brand-dark">
+                <X size={24} />
               </button>
             </div>
             
-            <div className="flex flex-col gap-6 text-2xl font-display font-bold uppercase tracking-wide">
+            <div className="flex flex-col p-6 gap-6">
               {navLinks.map((link) => (
-                <motion.div 
-                  key={link.name}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.1 }}
-                >
-                  <Link 
-                    href={link.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="hover:text-brand-accent transition-colors block py-2 border-b border-white/5"
-                  >
-                    {link.name}
-                  </Link>
-                </motion.div>
-              ))}
-              {session && (
                 <Link 
-                  href="/admin/dashboard" 
+                  key={link.name}
+                  href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-brand-accent py-2"
+                  className="text-lg font-semibold text-brand-dark hover:text-brand-accent transition-colors block py-2 border-b border-brand-border/50"
                 >
-                  Admin Area
+                  {link.name}
                 </Link>
-              )}
+              ))}
             </div>
           </motion.div>
         )}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Inter } from "next/font/google";
+import { Barlow_Condensed, Inter } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
 import NextAuthProvider from "@/components/providers/NextAuthProvider";
@@ -9,10 +9,10 @@ import CartDrawer from "@/components/cart/CartDrawer";
 import { Toaster } from "sonner";
 import { cn } from "@/lib/utils";
 
-const bebasNeue = Bebas_Neue({
-  weight: "400",
+const barlowCondensed = Barlow_Condensed({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
-  variable: "--font-bebas-neue",
+  variable: "--font-barlow-condensed",
 });
 
 const inter = Inter({
@@ -33,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={cn("h-full antialiased")}>
-      <body className={`${bebasNeue.variable} ${inter.variable} font-sans bg-brand-bg text-brand-text min-h-full flex flex-col`}>
+      <body className={`${barlowCondensed.variable} ${inter.variable} font-sans bg-brand-bg text-brand-text min-h-full flex flex-col`}>
         <NextAuthProvider>
           <CartProvider>
             <Navbar />
